@@ -11,7 +11,11 @@ class Settings(BaseSettings):
     API_V1_PREFIX: str
 
      # Database
-    DATABASE_URL: str     
+    DATABASE_URL: str  
+
+    jwt_secret_key: str
+    jwt_algorithm:str
+    access_token_expiry_minutes:int   
 
     model_config = SettingsConfigDict(
         env_file=".env",

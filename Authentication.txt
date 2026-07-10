@@ -1,0 +1,69 @@
+React
+
+↓
+
+User enters Email + Password
+
+↓
+
+POST /auth/login
+
+↓
+
+FastAPI
+
+↓
+
+Find user by email
+
+↓
+
+Compare password using bcrypt
+
+↓
+
+Password correct?
+
+↓
+
+YES
+
+↓
+
+Generate Access Token
+
+↓
+
+Generate Refresh Token
+
+↓
+
+Return both tokens
+
+↓
+
+React stores tokens
+
+──────────────────────────────
+
+User opens Dashboard
+
+↓
+
+React sends Access Token
+
+↓
+
+FastAPI verifies JWT
+
+↓
+
+Extract User ID and Role
+
+↓
+
+Check authorization
+
+↓
+
+Return dashboard data
