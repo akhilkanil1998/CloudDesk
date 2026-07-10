@@ -1,4 +1,4 @@
-from passlib import CryptContext
+from passlib.context import CryptContext
 from datetime import datetime, timedelta, timezone
 from app.core.config import settings
 from jose import jwt
