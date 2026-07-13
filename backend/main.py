@@ -6,5 +6,5 @@ import app.models
 
 # Instance of FastAPI
 app = FastAPI()
-
+# this will include the router in the auth file.
 app.include_router(auth_router)

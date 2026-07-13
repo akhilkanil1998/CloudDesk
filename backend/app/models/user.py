@@ -3,7 +3,7 @@ from sqlalchemy import String,Integer,DateTime,ForeignKey
 
 from sqlalchemy.orm import Mapped,mapped_column, relationship
 # imports the Base class from the database file
-from app.core.database import Base
+from app.db.database import Base
 # imports date from the datetime
 from datetime import datetime
 
