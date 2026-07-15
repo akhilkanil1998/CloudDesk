@@ -33,8 +33,3 @@ def login(request:LoginRequest, db:Session=Depends(get_db)):
     access_token=access_token,
     token_type="bearer")
 
-# Who am I based on the access token I provided?
-# First the Depends method will run and then the value will be stored to current_user
-@auth_router.get("/me", response_model=UserResponse)
-def get_me(current_user: User = Depends(get_current_user)):
-    return current_user
