@@ -11,6 +11,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 #  Gets the current user verifying the jwt token and checking the user in db.
 def get_current_user(token: str = Depends(oauth2_scheme),db:Session = Depends(get_db)):
+    # initializing the exception here to use in multiple places.
     credentials_exception = HTTPException(
         status_code= status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials.",
@@ -23,7 +24,7 @@ def get_current_user(token: str = Depends(oauth2_scheme),db:Session = Depends(ge
 
     try:
         # Verifies the token signature using the secret key. 
-        # #Checks whether the token has expired (exp claim).
+        # Checks whether the token has expired (exp claim).
         # Validates that the token structure is correct.
         payload = jwt.decode(
             token,
