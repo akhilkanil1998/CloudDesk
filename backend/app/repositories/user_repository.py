@@ -3,27 +3,27 @@ from sqlalchemy.orm import Session
 
 
 class UserRepository:
-    # query the database and fetch all the users available.
-    @staticmethod
-    def get_all_users(db:Session) -> list[User]:
-        return db.query(User).all()
+    def __init__(self,db:Session):
+        self.db = db
     
-    @staticmethod
-    def get_user_by_email(db:Session, email:str) -> User | None:
-        return db.query(User).filter(User.email == email).first()
+    # query the database and fetch all the users available.   
+    def get_all_users(self) -> list[User]:
+        return self.db.query(User).all()
+    
+   # Get user by email.
+    def get_user_by_email(self, email:str) -> User | None:
+        return self.db.query(User).filter(User.email == email).first()
 
-    # Creates new user.
-    @staticmethod
-    def create_user(db:Session, user:User) -> User:
-        db.add(user)
-        db.commit()
-        db.refresh(user)
+    # Creates new user.    
+    def create_user(self, user:User) -> User:
+        self.db.add(user)
+        self.db.commit()
+        self.db.refresh(user)
         return user
         
-    # Saves the changes after the emp id is created.
-    @staticmethod
-    def save_user_changes(db:Session, user:User) -> User:       
-        db.commit()
-        db.refresh(user)
+    # Saves the changes after the emp id is created.    
+    def save_user_changes(self, user:User) -> User:       
+        self.db.commit()
+        self.db.refresh(user)
         return user
 

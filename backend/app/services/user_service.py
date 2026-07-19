@@ -24,7 +24,7 @@ class UserService:
         
         existing_role = RoleRepository.get_role_by_id(request.role_id)
 
-        if role is None:
+        if existing_role is None:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail="Role not found."
