@@ -1,7 +1,7 @@
 from fastapi import HTTPException, status, Depends
 from fastapi.security import OAuth2PasswordBearer
 from app.db.database import get_db
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from jose import jwt,JWTError
 from app.core.config import settings
 from app.models.user import User
@@ -50,7 +50,11 @@ def get_current_user(token: str = Depends(oauth2_scheme),db:Session = Depends(ge
         raise credentials_exception
         
     # fetching the user from the database.
-    user = db.query(User).filter(User.id == user_id).first()
+    # joinedload - Now RBAC won't trigger an additional query every time current_user.role is accessed.
+    user = (db.query(User)
+            .options(joinedload(User.role))
+            .filter(User.id == user_id)
+            .first())
 
         # Raie error if user is none.
     if user is None:

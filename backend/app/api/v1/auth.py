@@ -5,9 +5,10 @@ from app.db.database import get_db
 from app.schemas.auth import LoginRequest,TokenResponse
 from app.services.auth_service import AuthenticationService
 from app.core.security import create_access_token
-from app.dependency.auth import get_current_user
+from app.dependencies.auth import get_current_user
 from app.models.user import User
 from app.schemas.user import UserResponse
+from fastapi.security import OAuth2PasswordRequestForm
 
 #create an endpoint
 auth_router = APIRouter(
@@ -17,14 +18,23 @@ auth_router = APIRouter(
 
 # endpoint to login.
 @auth_router.post("/login", response_model=TokenResponse)
-def login(request:LoginRequest, db:Session=Depends(get_db)):
+def login(
+    form_data: OAuth2PasswordRequestForm = Depends(),
+    db: Session = Depends(get_db)
+):
+
     # Checks if the user email and password are present.
-    user = AuthenticationService.authenticate_user(request.email, request.password, db)
+    user = AuthenticationService.authenticate_user(
+        form_data.username,   # This will contain the email
+        form_data.password,
+        db    )
 
     #if  User not there, send 401 Unauthorized error
     if not user:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, 
-                            detail="Invalid email or password.")
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid email or password."
+        )
     
     access_token = create_access_token(subject=str(user.id))
     

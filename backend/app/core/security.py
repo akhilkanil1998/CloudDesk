@@ -17,7 +17,7 @@ def verify_password(password:str, hashed_password:str):
 def create_access_token(subject: str):
     current_time = datetime.now(timezone.utc)
     # fetches value from the env file
-    expiry_time = current_time + timedelta(minutes=settings.access_token_expiry_minutes)
+    expiry_time = current_time + timedelta(minutes=settings.access_token_expire_minutes)
 
     payload = {
         "sub": subject,

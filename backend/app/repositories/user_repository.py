@@ -1,5 +1,6 @@
 from app.models.user import User
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 
 
 class UserRepository:
@@ -21,9 +22,15 @@ class UserRepository:
         self.db.refresh(user)
         return user
         
-    # Saves the changes after the emp id is created.    
-    def save_user_changes(self, user:User) -> User:       
-        self.db.commit()
-        self.db.refresh(user)
-        return user
+    # # Saves the changes after the emp id is created.    
+    # def save_user_changes(self, user:User) -> User:       
+    #     self.db.commit()
+    #     self.db.refresh(user)
+    #     return user
+
+    # get the next sequence of emp id from the db.
+    def get_next_emp_sequence(self) -> int:
+        result = self.db.execute(text("select nextval('employee_id_seq')"))
+        return result.scalar_one()
+
 
