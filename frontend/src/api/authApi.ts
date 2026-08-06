@@ -9,5 +9,6 @@ export const loginUser = async (email: string, password: string) => {
     formData.append("password", password);
 
     const response = await axios.post("/auth/login", formData);
-     return response.data; 
+    
+    return response.data; 
 };
