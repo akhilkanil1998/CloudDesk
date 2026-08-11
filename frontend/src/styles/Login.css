@@ -126,10 +126,10 @@ p,h2{
 }
 
 .form-links {
-    display: flex;
-    margin-top: 20px;
-    font-size: 14px;
-    justify-content: space-between;
+  display: flex;
+  justify-content: flex-end;
+  
+  
 }
 
 .form-links a {
@@ -168,3 +168,15 @@ p,h2{
     color: #6b7280;
     font-size: 18px;
 }
+
+.error{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #e32807;
+    font-size: 14px;
+}
+
+.forgot-password{
+     position: relative;
+    top: -8px;
+}
+
