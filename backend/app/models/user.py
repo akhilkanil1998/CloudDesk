@@ -1,5 +1,5 @@
 #this represents the database tables.
-from sqlalchemy import String,Integer,DateTime,ForeignKey
+from sqlalchemy import String,Integer,DateTime,ForeignKey,func
 
 from sqlalchemy.orm import Mapped,mapped_column, relationship
 # imports the Base class from the database file
@@ -18,10 +18,10 @@ class User(Base):
     email: Mapped[str] = mapped_column(String(100))
     password_hash: Mapped[str] = mapped_column(String(100))
     role_id: Mapped[int] = mapped_column(ForeignKey("roles.id"))
-    created_date: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_date: Mapped[datetime] = mapped_column(server_default=func.now())
 
     # relationship with roles table. 
     role = relationship(
         "Role",
-        back_populates="users"
+        back_populates= "users"
     )

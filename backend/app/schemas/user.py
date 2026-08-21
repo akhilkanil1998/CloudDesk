@@ -6,6 +6,8 @@ class UserResponse(BaseModel):
     employee_id: str
     email: EmailStr
     employee_name: str
+    role: str
+
 
     # Tells pydatnic not to expect dictionary. 
     #  Read the values from the object's attributes.

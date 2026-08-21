@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchUsers } from "../services/userService";
+import { fetchUsers } from "../services/UserService";
 import type { User } from "../types/user";
 
 const Users = () => {

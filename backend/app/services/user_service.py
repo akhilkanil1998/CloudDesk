@@ -52,6 +52,9 @@ class UserService:
         # # save the user with the generated emp id.
         # created_user = self.user_repository.save_user_changes(created_user)
         return created_user
+
+    def get_user_by_id(self, userid:int) -> User:
+        return self.user_repository.get_user_by_id(userid=userid)
            
 
             

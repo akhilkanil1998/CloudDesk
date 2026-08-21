@@ -33,4 +33,8 @@ class UserRepository:
         result = self.db.execute(text("select nextval('employee_id_seq')"))
         return result.scalar_one()
 
+    # fetches the user by id.
+    def get_user_by_id(self, userid:int) -> User:
+        return self.db.query(User).filter(User.id==userid).first()
+
 
