@@ -9,6 +9,7 @@ from app.dependencies.auth import get_current_user
 from app.models.user import User
 from app.schemas.user import UserResponse
 from fastapi.security import OAuth2PasswordRequestForm
+from app.dependencies.auth import get_auth_service
 
 #create an endpoint
 auth_router = APIRouter(
@@ -19,15 +20,15 @@ auth_router = APIRouter(
 # endpoint to login.
 @auth_router.post("/login", response_model=TokenResponse)
 def login(
-    form_data: OAuth2PasswordRequestForm = Depends(),
-    db: Session = Depends(get_db)
-):
+    form_data: OAuth2PasswordRequestForm = Depends(), 
+    authentication_service: AuthenticationService= Depends(get_auth_service)
+    ):
 
     # Checks if the user email and password are present.
-    user = AuthenticationService.authenticate_user(
+    user = authentication_service.authenticate_user(
         form_data.username,   # This will contain the email
-        form_data.password,
-        db    )
+        form_data.password
+         )
 
     #if  User not there, send 401 Unauthorized error
     if not user:

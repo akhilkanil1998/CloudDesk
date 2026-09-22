@@ -5,6 +5,8 @@ from sqlalchemy.orm import Session, joinedload
 from jose import jwt,JWTError
 from app.core.config import settings
 from app.models.user import User
+from app.repositories.auth_repository import AuthRepository
+from app.services.auth_service import AuthenticationService
 
 #This extracts the Bearer token from the request header.
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
@@ -56,14 +58,23 @@ def get_current_user(token: str = Depends(oauth2_scheme),db:Session = Depends(ge
             .filter(User.id == user_id)
             .first())
 
-        # Raie error if user is none.
+        # Raise error if user is none.
     if user is None:
         raise credentials_exception
 
     return user
+
+
+def get_auth_repository(db: Session= Depends(get_db)) -> AuthRepository:
+    return AuthRepository(db)
+
+def get_auth_service(auth_repository:AuthRepository=Depends(get_auth_repository)) -> AuthenticationService:
+    return AuthenticationService(auth_repository)
+
+
+
+
+
         
     
-    
-   
-
     

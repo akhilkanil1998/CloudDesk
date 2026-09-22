@@ -1,5 +1,5 @@
 import { useState, type SubmitEvent } from "react";
-import type { loginDetails } from "../types/login";
+import type { LoginDetails } from "../types/login";
 import { login } from "../services/AuthService";
 import "../styles/Login.css"
 import logo from"../assets/clouddesk_logo.png"
@@ -9,7 +9,7 @@ import axios from "axios";
 
 export const LoginCard = ()=>{
     const navigate = useNavigate();
-    const [loginDetails, setLoginDetails] = useState<loginDetails>({
+    const [loginDetails, setLoginDetails] = useState<LoginDetails>({
         email: "",
         password: ""
     });    

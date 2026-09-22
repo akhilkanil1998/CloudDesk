@@ -1,23 +1,17 @@
-from sqlalchemy.orm import Session
+from app.repositories.auth_repository import AuthRepository
 from app.models.user import User
-from app.core.security import verify_password, hash_password
 
 class AuthenticationService:
-
-    @staticmethod
-    def authenticate_user( email:str, password:str, db:Session):
-        # Fetches the Users from db and filter with email.
-        user = db.query(User).filter(User.email == email).first()
-        if not user:  
-            return None          
-        if not verify_password(password, user.password_hash):
-            return None
+    def __init__(self, auth_repository:AuthRepository):
+        self.auth_repository = auth_repository
+    
+    def authenticate_user( self, email:str, password:str) -> User|None:
+        return self.auth_repository.authenticate_user(email,password)
         
-        return user
 
-    @staticmethod
-    def get_user_by_id(user_id: int, db: Session):
-        return db.query(User).filter(User.id == user_id).first()
+    
+    def get_user_by_id(self, user_id: int):
+        return self.auth_repository.get_user_by_id(user_id)
 
         
        
