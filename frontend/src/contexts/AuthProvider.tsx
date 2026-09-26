@@ -36,6 +36,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
         // We don't call /user/me because there's no token to authenticate the request.
          if (!token) {
             setLoading(false);
+            
             return;
          }
 

@@ -1,11 +1,12 @@
 import {  createContext } from "react";
+import type { Roles } from "../types/roles";
 
 // This interface would be returned.
 export interface User {
     employee_id: string;
     email: string;
     employee_name: string;
-    role: string;
+    role: Roles;
 }
 // this is for what data should Context provide
 interface AuthContextType{

@@ -1,7 +1,7 @@
-export type Role = "Admin" | "Agent" | "User";
+import type{ Roles } from "./roles";
 
 export interface MenuItem {
     label: string;
     path: string;
-    roles: Role[];
+    roles: Roles[];
 }
