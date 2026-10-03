@@ -1,6 +1,7 @@
 import { type ReactNode } from "react";
 import type { Roles } from "../../types/roles";
 import { useAuth } from "../../hooks/useAuth";
+import { Navigate } from "react-router-dom";
 
 
 export interface RoleGuardProps {
@@ -9,7 +10,7 @@ export interface RoleGuardProps {
 
 }
 
-export const RoleGuard = (roleGuarddata: RoleGuardProps) =>
+export const RoleGuard = (roleGuardData: RoleGuardProps) =>
 {
     const {user,loading} = useAuth();
 
@@ -17,17 +18,18 @@ export const RoleGuard = (roleGuarddata: RoleGuardProps) =>
       return( <h1> checking authorization...</h1>);
     }
     else if(user=== null){
-        throw new Error("Unauthorized");
+         return <Navigate to="/" replace/>; 
     
     }
     
-    if(!roleGuarddata.allowedRoles.includes(user.role))
+    if(!roleGuardData.allowedRoles.includes(user.role))
     {
-        throw new Error("Unauthorized");        
+        return <Navigate to="/unauthorized" replace />; 
         
     }  
     else{
-        return(roleGuarddata.children);
+        return(roleGuardData.children);
     }
+    
     
 }

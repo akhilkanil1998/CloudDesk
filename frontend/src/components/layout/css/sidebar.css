@@ -1,0 +1,33 @@
+.sidebar{
+    width:240px;
+     min-height: 100vh;
+    background: linear-gradient(135deg, #2563eb, #4a7aff);
+}
+
+.menu-items a{
+    display: block;
+    color: white;
+    font-size: 18px; 
+    text-decoration: none; 
+    padding: 4px 40px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+     padding-top: 80px; 
+}
+
+.logo-sidebar-container { 
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 5px; 
+    margin-top: -80px;
+
+    
+
+}
+.logo-sidebar {width: 240px; margin-bottom: 5px;
+height: 70px;
+     }

@@ -41,9 +41,16 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
          }
 
         try {
+                console.log("Before fetchCurrentUser");
+
             const user = await fetchCurrentUser();
+                console.error("After fetched user");
+
+            console.log("Fetched user:", user);
             setUser(user);
         } catch (error) {
+                console.error("Failed to fetch current user", error);
+
             console.error("Failed to fetch current user", error);
         } finally {
             setLoading(false);

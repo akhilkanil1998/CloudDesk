@@ -12,6 +12,7 @@ export interface RouteConfigProps  {
 export const routes: RouteConfigProps[] = [
    {path: "/dashboard", element: <Dashboard/>, allowedRoles: ["Admin", "Agent", "User"]},
    
+   
 ];
 
 

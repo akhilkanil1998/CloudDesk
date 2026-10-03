@@ -43,7 +43,8 @@ export const LoginCard = ()=>{
 
     try{
         const response = await login(loginDetails.email, loginDetails.password);
-        localStorage.setItem("access_token", response.access_token);        
+        localStorage.setItem("access_token", response.access_token);   
+        console.log("Login successful - navigating");     
         navigate("/dashboard");
     }
     catch(error)

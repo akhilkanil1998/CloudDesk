@@ -1,16 +1,11 @@
-import { Navigate } from "react-router-dom";
-import type { ReactNode } from "react";
+import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 
 
-interface ProtectedRouteProvider {
-    children: ReactNode;
-}
-
-export const ProtectedRoute = ({children}:ProtectedRouteProvider) => {
+export const ProtectedRoute = () => {
     // Get the authentication state from authcontext
     const {user,loading} = useAuth();
-
+  console.log("ProtectedRoute:", { user, loading });
     if(loading)
     {
        
@@ -21,7 +16,7 @@ export const ProtectedRoute = ({children}:ProtectedRouteProvider) => {
         return <Navigate to="/"  replace />;
     }
     
-    return (children);
+    return <Outlet/>;
     
 
 };

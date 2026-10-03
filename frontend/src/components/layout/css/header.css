@@ -1,0 +1,13 @@
+.header{
+    height:70px;
+    display:flex;
+    align-items: center;
+    padding: 0 20px;
+    background: linear-gradient(135deg, #2563eb, #4a7aff);
+    
+}
+
+.header h2{
+    color:white;
+}
+

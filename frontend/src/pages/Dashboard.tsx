@@ -1,20 +1,38 @@
+
+import { Header } from "../components/layout/Header";
 import {Sidebar} from "../components/layout/Sidebar"
 import { useAuth } from "../hooks/useAuth";
+import "./css/dashboard.css";
 
 
 
 export const Dashboard = () => {
 
     const {user,loading} = useAuth();
-     if(user===null){
-            throw new Error("User is null.");            
-         }
+
+     if (loading) {
+        return <h1>Still loading</h1>;
+    }
+
+    if (user === null) {
+        return null;
+    }
+     
     return (       
-        <div>        
-        {loading?<h1>Still loading</h1>:<><h1>Welcome to CloudDesk Dashboard, {user.employee_name}-{user.role}</h1>
+        <div className="dashboard-layout">        
+        
         <Sidebar/>
-        </>
-         }
-        </div>     
+   
+        
+        <main className="dashboard-content">
+            <Header />
+                <h1>
+                    Welcome to CloudDesk Dashboard,{" "}
+                    {user.employee_name}-{user.role}
+                </h1>
+            </main>
+         
+        </div>
+           
         );
 };
