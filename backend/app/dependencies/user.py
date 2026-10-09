@@ -15,3 +15,4 @@ def get_user_service(user_repository: UserRepository = Depends(get_user_reposito
                      ) -> UserService:
     return UserService(user_repository,role_repository)
 
+

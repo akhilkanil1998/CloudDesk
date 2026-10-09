@@ -31,6 +31,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
     useEffect(() => {
     // this is the function which will run when the page loads to get the user.
     const loadCurrentUser = async() => {
+        console.log("Inside loadCurrentUser");
         const token = localStorage.getItem("access_token");
         // Before calling /user/me, check whether we even have a token.
         // We don't call /user/me because there's no token to authenticate the request.

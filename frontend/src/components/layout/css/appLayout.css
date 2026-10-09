@@ -1,0 +1,12 @@
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-area {
+    flex: 1;
+}
+
+.page-content {
+    padding: 30px;
+}

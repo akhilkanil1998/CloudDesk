@@ -5,6 +5,7 @@ import { AuthProvider } from "./contexts/AuthProvider";
 import { ProtectedRoute } from "./components/auth/ProtectedRoute";
 import { Unauthorized } from "./pages/Unauthorized";
 import { AppLayout } from "./components/layout/AppLayout";
+import { Tickets } from "./pages/Tickets";
 // Component in react.
 function App(){
    return (
@@ -24,6 +25,10 @@ function App(){
                             <Route
                                 path="/dashboard"
                                 element={<Dashboard />}
+                            />
+                            <Route
+                                path="/tickets"
+                                element={<Tickets />}
                             />
                             
                            
