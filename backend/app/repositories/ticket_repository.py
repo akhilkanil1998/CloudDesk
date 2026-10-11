@@ -1,6 +1,8 @@
 from app.models.ticket import Ticket
 from sqlalchemy.orm import Session
 from sqlalchemy import and_
+from app.schemas.ticket import UpdateTicketRequest
+
 class TicketRepository():
     def __init__(self, db:Session):
         self.db = db
@@ -33,5 +35,29 @@ class TicketRepository():
     def get_ticket_by_id_and_created(self, id, user_id: int) -> Ticket|None:
             return self.db.query(Ticket).filter(and_(Ticket.id == id, 
                                                      Ticket.created_by == user_id)).one_or_none()
+
+
+    def update_ticket_by_id(self,id: int, update_request: UpdateTicketRequest) -> Ticket|None:        
+        
+        ticket = self.get_ticket_by_id(id=id)
+
+
+        if ticket is None:
+            return None
+
+        # fetches only the values sent by the user. If user did not add a value, then it is rejected.
+        update_data = update_request.model_dump(exclude_unset=True, exclude_none=True)
+        
+        for key, value in update_data.items():
+            setattr(ticket,key,value)
+
+        self.db.commit()
+        self.db.refresh(ticket)
+
+        return ticket
+
+
+        
+
 
 

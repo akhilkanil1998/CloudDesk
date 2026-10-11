@@ -4,6 +4,7 @@ from app.services.ticket_service import TicketService
 from app.dependencies.tickets import get_ticket_service
 from app.dependencies.auth import get_current_user
 from app.models.user import User
+from app.schemas.ticket import UpdateTicketRequest
 
 
 ticket_router = APIRouter(
@@ -27,3 +28,9 @@ def get_all_tickets(ticket_service: TicketService = Depends(get_ticket_service),
 def get_ticket_by_id(id: int, ticket_service: TicketService = Depends(get_ticket_service),
                      current_user: User=Depends(get_current_user)):
     return ticket_service.get_ticket_by_id(id,current_user=current_user)
+
+@ticket_router.patch("ticket", response_model=TicketResponse)
+def update_ticket_by_id(id: int, update_request: UpdateTicketRequest, ticket_service: TicketService = Depends(get_ticket_service),
+                     current_user: User=Depends(get_current_user)):
+    return ticket_service.update_ticket_by_id(id, update_request=update_request, current_user=current_user)
+

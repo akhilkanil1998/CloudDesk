@@ -15,9 +15,9 @@ class CreateTicketRequest(BaseModel):
     priority: Priority = Priority.LOW #default to Low priority
 
 
-class UpdateTicketRequest(BaseModel):
-    title: str
-    description: str
-    priority: Priority
-    status: Status
-    assigned_to: int
+class UpdateTicketRequest(BaseModel): 
+    title: str | None=None
+    description: str | None=None
+    priority: Priority | None=None
+    status: Status | None=None
+    assigned_to: int | None=None
