@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from app.enum.priority import Priority
 from app.enum.status import Status
 
@@ -6,6 +6,7 @@ class TicketResponse(BaseModel):
     id: int
     title: str
     description: str
+    model_config = ConfigDict(from_attributes=True)
 
 
 
@@ -21,3 +22,10 @@ class UpdateTicketRequest(BaseModel):
     priority: Priority | None=None
     status: Status | None=None
     assigned_to: int | None=None
+
+class PaginatedTicketResponse(BaseModel):
+    items: list[TicketResponse]
+    page: int
+    page_size: int
+    total: int
+    total_pages: int

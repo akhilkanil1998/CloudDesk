@@ -1,9 +1,12 @@
 from app.repositories.ticket_repository import TicketRepository
-from app.schemas.ticket import CreateTicketRequest, TicketResponse
+from app.schemas.ticket import CreateTicketRequest, TicketResponse,PaginatedTicketResponse
 from app.models.ticket import Ticket
 from app.models.user import User
 from app.schemas.ticket import UpdateTicketRequest
-from fastapi import HTTPException
+from fastapi import HTTPException,status
+from app.enum.ticketQueryScope import TicketQueryScope
+from app.enum.status import Status
+from app.enum.priority import Priority
 
 class TicketService:
     def __init__(self, ticket_repository:TicketRepository):
@@ -95,5 +98,78 @@ class TicketService:
 
         return self.ticket_repository.update_ticket_by_id(id, update_request = update_request)
          
+    def delete_ticket_by_id(self, ticket_id: int, current_user:User):
+        ticket = self.get_ticket_by_id(ticket_id, current_user=current_user)
 
-         
+        if not ticket:
+            raise  HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail=f"Ticket {ticket_id} not found."
+                )
+
+        # agents cant delete
+        if current_user.role.role_name not in ["Admin", "User"]:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="You are not authorized to delete this ticket."
+            )
+                                
+        is_deleted = self.ticket_repository.delete_ticket_by_id(
+                    ticket_id=ticket_id)
+
+    
+        if not is_deleted:
+            raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Ticket {ticket_id} could not be deleted because it no longer exists."
+            )
+
+       
+        return f"Ticket {ticket_id} deleted successfully."
+
+
+
+    def get_tickets_query(self,page: int, page_size: int,
+                          current_user: User,
+                          status: Status | None, 
+                          priority:Priority|None) -> PaginatedTicketResponse:
+
+        user_id = current_user.id
+
+        if current_user.role.role_name == "Agent":
+            scope = TicketQueryScope.ASSIGNED
+
+        elif current_user.role.role_name == "User":
+            scope = TicketQueryScope.CREATED
+
+        elif current_user.role.role_name == "Admin":
+            scope = TicketQueryScope.ALL
+
+        else:
+            raise HTTPException(status_code=403, detail="Invalid user role")
+
+        total, tickets = self.ticket_repository.get_tickets_query(scope=scope,page=page,page_size=page_size,
+                                                            user_id=user_id,
+                                                           status=status,priority=priority)
+        total_pages = (total + page_size - 1) // page_size
+
+        ticket_items = [
+        TicketResponse.model_validate(ticket)
+        for ticket in tickets
+    ]
+
+        return PaginatedTicketResponse(
+        items=ticket_items,
+        page=page,
+        page_size=page_size,
+        total=total,
+        total_pages=total_pages
+    )
+
+        
+
+
+        
+
+       
+        
