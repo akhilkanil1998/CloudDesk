@@ -13,9 +13,13 @@ class Settings(BaseSettings):
      # Database
     DATABASE_URL: str  
 
+    #jwt 
     jwt_secret_key: str
     jwt_algorithm:str
-    access_token_expire_minutes:int   
+    access_token_expire_minutes:int  
+
+    # Log directory
+    LOG_DIR: str 
 
     model_config = SettingsConfigDict(
         env_file=".env",

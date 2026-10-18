@@ -2,6 +2,7 @@
 from fastapi import FastAPI
 from app.api.v1.auth import auth_router
 from app.api.v1.users import user_router
+from app.core import logging_config
 # Import all models so SQLAlchemy registers them
 import app.models
 from app.api.v1.tickets import ticket_router
