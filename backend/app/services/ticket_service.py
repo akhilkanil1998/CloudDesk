@@ -7,6 +7,7 @@ from fastapi import HTTPException,status
 from app.enum.ticketQueryScope import TicketQueryScope
 from app.enum.status import Status
 from app.enum.priority import Priority
+from app.core.logging_config import logger
 
 class TicketService:
     def __init__(self, ticket_repository:TicketRepository):
@@ -17,7 +18,10 @@ class TicketService:
                         description= ticket.description,
                         priority = ticket.priority,
                         created_by = current_user.id)
-        return self.ticket_repository.create_ticket(ticket=ticket)
+        
+        response_ticket = self.ticket_repository.create_ticket(ticket=ticket)
+        logger.info(f"Ticket {response_ticket.id} created successfully. User id {current_user.employee_id}")
+        return response_ticket
 
 
     def get_all_tickets(self,current_user:User) -> list[Ticket]|None:

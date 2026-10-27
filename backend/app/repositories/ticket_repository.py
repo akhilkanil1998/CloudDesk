@@ -12,9 +12,15 @@ class TicketRepository():
 
 
     def create_ticket(self, ticket:Ticket):
-        self.db.add(ticket)
-        self.db.commit()
-        self.db.refresh(ticket)
+        try:
+            self.db.add(ticket)
+            self.db.commit()
+            self.db.refresh(ticket)
+
+        except Exception:
+            self.db.rollback()
+            raise 
+
         return ticket
 
     def get_all_tickets(self) -> list[Ticket]|None:

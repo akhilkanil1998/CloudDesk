@@ -1,7 +1,9 @@
 import axios from "axios";
 
 // Create ONE Axios instance. This instance is created to call the endpoints with this single instance.
- export const instance = axios.create();
+ export const instance = axios.create({
+  baseURL: "http://localhost:8000",
+});
 
   
 instance.interceptors.request.use((config) => {

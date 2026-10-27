@@ -1,7 +1,7 @@
 // Context API in React provides a way to share data globally across components without prop drilling. 
 // It allows creating a lightweight global state accessible by any component.
 
-import { useState, useEffect, type ReactNode } from "react";
+import { useState, useEffect,useCallback, type ReactNode } from "react";
 import { AuthContext, type User } from "./AuthContext";
 import { fetchCurrentUser } from "../services/UserService";
 
@@ -26,6 +26,28 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
     const [user, setUser] = useState<User|null> (null);
     // loading is initially true.
     const [loading, setLoading] = useState<boolean>(true);
+
+    const refreshUser = useCallback(async () => {
+        const token = localStorage.getItem("access_token");
+
+        if (!token) {
+            setUser(null);
+            setLoading(false);
+            return;
+        }
+
+        setLoading(true);
+
+        try {
+            const currentUser = await fetchCurrentUser();
+            setUser(currentUser);
+        } catch (error) {
+            setUser(null);
+            throw error;
+        } finally {
+            setLoading(false);
+        }
+    }, []);
 
     // this is used how we should load the current user.
     useEffect(() => {
@@ -60,12 +82,12 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
    
      loadCurrentUser();
      // [] - Run this effect when AuthProvider mounts.
-   },[]);
+   },[refreshUser]);
 
 
     return (
         // Every component inside me can access user and loading.
-        <AuthContext.Provider value={{user, loading}}> 
+        <AuthContext.Provider value={{user, loading, refreshUser}}> 
             {children}
         </AuthContext.Provider>
     )

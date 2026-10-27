@@ -1,4 +1,5 @@
-import axios from "axios";
+
+import { instance } from "./axiosClient";
 
 export const loginUser = async (email: string, password: string) => {
 
@@ -8,7 +9,7 @@ export const loginUser = async (email: string, password: string) => {
     formData.append("username", email);
     formData.append("password", password);
 
-    const response = await axios.post("/auth/login", formData);
+    const response = await instance.post("/auth/login", formData);
     
     return response.data; 
 };

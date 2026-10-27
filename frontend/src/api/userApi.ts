@@ -14,6 +14,6 @@ export const getUsers = async () =>{
 
 export const getCurrentUser  = async() =>{
         const response = await instance.get("/user/me")
-        return response.data
+        return response.data;
 }
 

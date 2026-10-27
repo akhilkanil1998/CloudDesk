@@ -1,5 +1,6 @@
 # Reads configuration
 from pydantic_settings import BaseSettings,SettingsConfigDict
+from pathlib import Path
 
 class Settings(BaseSettings):
     #project details
@@ -19,7 +20,7 @@ class Settings(BaseSettings):
     access_token_expire_minutes:int  
 
     # Log directory
-    LOG_DIR: str 
+    LOG_DIR: str
 
     model_config = SettingsConfigDict(
         env_file=".env",

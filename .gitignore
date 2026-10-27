@@ -10,3 +10,14 @@ backend/app/.env
 __pycache__/
 *.py[cod]
 *$py.class
+
+# logs
+backend/logs
+
+
+
+# -------------------------
+# React
+# -------------------------
+
+frontend/node_modules

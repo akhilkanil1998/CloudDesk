@@ -17,9 +17,14 @@ class UserRepository:
 
     # Creates new user.    
     def create_user(self, user:User) -> User:
-        self.db.add(user)
-        self.db.commit()
-        self.db.refresh(user)
+        try:
+            self.db.add(user)
+            self.db.commit()
+            self.db.refresh(user)
+
+        except Exception:
+            self.db.rollback()
+            raise
         return user
         
     # # Saves the changes after the emp id is created.    
@@ -35,6 +40,7 @@ class UserRepository:
 
     # fetches the user by id.
     def get_user_by_id(self, userid:int) -> User:
-        return self.db.query(User).filter(User.id==userid).first()
+        user = self.db.query(User).filter(User.id==userid).first()
+        return user
 
 

@@ -6,6 +6,7 @@ from fastapi import HTTPException,status
 from app.core.security import hash_password
 from datetime import datetime
 from app.repositories.role_repository import RoleRepository
+from app.core.logging_config import logger
 
 class UserService:
     def __init__(self, user_repository: UserRepository,role_repository: RoleRepository):
@@ -48,6 +49,8 @@ class UserService:
             role_id = request.role_id       
         )
         created_user = self.user_repository.create_user(new_user)   
+
+        logger.info(f"User {created_user.employee_id} created successfully.")
 
         # # save the user with the generated emp id.
         # created_user = self.user_repository.save_user_changes(created_user)

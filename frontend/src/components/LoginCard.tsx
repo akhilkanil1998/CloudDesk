@@ -6,6 +6,8 @@ import logo from"../assets/clouddesk_logo.png"
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
 
 export const LoginCard = ()=>{
     const navigate = useNavigate();
@@ -20,6 +22,14 @@ export const LoginCard = ()=>{
    const togglePassword = () => {
     setShowPassword(!showPassword);
     };
+
+    const authContext = useContext(AuthContext);
+
+    if (!authContext) {
+        throw new Error("LoginCard must be inside AuthProvider");
+    }
+
+    const { refreshUser } = authContext;
 
       
     const handleLogin = async ( event: SubmitEvent<HTMLFormElement>) => {
@@ -44,6 +54,8 @@ export const LoginCard = ()=>{
     try{
         const response = await login(loginDetails.email, loginDetails.password);
         localStorage.setItem("access_token", response.access_token);   
+        // Fetch the logged-in user's details and update Context.
+        await refreshUser();
         console.log("Login successful - navigating");     
         navigate("/dashboard");
     }
@@ -52,6 +64,11 @@ export const LoginCard = ()=>{
         if (axios.isAxiosError(error) && error.response?.status === 401) {
             setLoginError("Invalid login credentials");
         }
+        else {
+        localStorage.removeItem("access_token");
+        setLoginError("Login failed. Please try again.");
+        console.error("Login or user initialization failed", error);
+    }
     }
     
  

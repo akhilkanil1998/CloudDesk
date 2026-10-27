@@ -11,7 +11,8 @@ export interface User {
 // this is for what data should Context provide
 interface AuthContextType{
     user: User | null;
-    loading: boolean
+    loading: boolean;
+    refreshUser: () => Promise<void>;
 
 }
 

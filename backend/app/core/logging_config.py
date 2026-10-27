@@ -27,4 +27,12 @@ handler = TimedRotatingFileHandler(
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
 handler.setFormatter(formatter)
 
-logger.addHandler(handler)
+# Avoid adding duplicate handlers to this logger.
+if not any(
+    isinstance(existing, TimedRotatingFileHandler)
+    and Path(existing.baseFilename) == log_file.resolve()
+    for existing in logger.handlers
+):
+    logger.addHandler(handler)
+else:
+    handler.close()

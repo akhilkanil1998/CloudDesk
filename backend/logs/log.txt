@@ -1,29 +1,54 @@
-2026-10-20 23:43:21,733 - INFO - app.core.logging_config - This is a test log
-2026-10-20 23:43:23,774 - INFO - app.core.logging_config - This is a test log
-2026-10-20 23:43:23,798 - INFO - app.core.logging_config - CloudDesk application startup initiated
-2026-10-20 23:43:23,798 - INFO - app.core.logging_config - CloudDesk application startup completed
-2026-10-20 23:43:27,861 - INFO - app.core.logging_config - GET| /| status = 404| duration = 18.37
-2026-10-20 23:43:28,256 - INFO - app.core.logging_config - GET| /| status = 404| duration = 0.49
-2026-10-20 23:43:28,405 - INFO - app.core.logging_config - GET| /favicon.ico| status = 404| duration = 0.75
-2026-10-20 23:43:31,015 - INFO - app.core.logging_config - GET| /docs| status = 200| duration = 0.34
-2026-10-20 23:43:31,180 - INFO - app.core.logging_config - GET| /openapi.json| status = 200| duration = 85.90
-2026-10-20 23:43:40,798 - INFO - app.core.logging_config - POST| /auth/login| status = 200| duration = 902.28
-2026-10-20 23:43:46,595 - INFO - app.core.logging_config - GET| /user/me| status = 200| duration = 129.38
-2026-10-20 23:44:40,061 - INFO - app.core.logging_config - CloudDesk application shutdown initiated
-2026-10-20 23:44:40,061 - INFO - app.core.logging_config - CloudDesk application shutdown completed
-2026-10-20 23:44:42,042 - INFO - CloudDesk - CloudDesk application startup initiated
-2026-10-20 23:44:42,042 - INFO - CloudDesk - CloudDesk application startup completed
-2026-10-20 23:44:45,145 - INFO - CloudDesk - CloudDesk application shutdown initiated
-2026-10-20 23:44:45,145 - INFO - CloudDesk - CloudDesk application shutdown completed
-2026-10-20 23:44:49,186 - INFO - CloudDesk - CloudDesk application startup initiated
-2026-10-20 23:44:49,186 - INFO - CloudDesk - CloudDesk application startup completed
-2026-10-20 23:44:49,630 - INFO - CloudDesk - GET| /docs| status = 200| duration = 0.42
-2026-10-20 23:44:49,746 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 63.51
-2026-10-20 23:44:57,591 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 431.25
-2026-10-20 23:45:01,713 - INFO - CloudDesk - GET| /user/me| status = 200| duration = 18.07
-2026-10-20 23:45:56,008 - INFO - CloudDesk - POST| /ticketstickets| status = 200| duration = 120.34
-2026-10-20 23:46:06,201 - INFO - CloudDesk - POST| /ticketstickets| status = 200| duration = 91.18
-2026-10-20 23:46:21,419 - INFO - CloudDesk - GET| /tickets/tickets| status = 200| duration = 119.75
-2026-10-20 23:47:12,557 - INFO - CloudDesk - POST| /ticketstickets| status = 422| duration = 9.77
-2026-10-20 23:49:28,195 - INFO - CloudDesk - CloudDesk application shutdown initiated
-2026-10-20 23:49:28,195 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-10-28 00:07:05,954 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-10-28 00:07:07,589 - INFO - CloudDesk - CloudDesk application startup completed
+2026-10-28 00:07:10,376 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-10-28 00:07:10,376 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-10-28 00:07:15,866 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-10-28 00:07:15,867 - INFO - CloudDesk - CloudDesk application startup completed
+2026-10-28 00:07:19,938 - INFO - CloudDesk - User Admin, CD-0003 has logged in successfully.
+2026-10-28 00:07:19,946 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 362.34 ms
+2026-10-28 00:07:20,020 - INFO - CloudDesk - GET| /api/v1/user/me| status = 404| duration = 28.55 ms
+2026-10-28 00:09:36,062 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-10-28 00:09:36,062 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-10-28 00:09:38,397 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-10-28 00:09:38,397 - INFO - CloudDesk - CloudDesk application startup completed
+2026-10-28 00:09:58,750 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-10-28 00:09:58,750 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-10-28 00:10:01,325 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-10-28 00:10:01,325 - INFO - CloudDesk - CloudDesk application startup completed
+2026-10-28 00:10:01,351 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 18.72 ms
+2026-10-28 00:11:32,267 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-10-28 00:11:32,268 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-10-28 00:11:34,575 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-10-28 00:11:34,575 - INFO - CloudDesk - CloudDesk application startup completed
+2026-10-28 00:11:37,694 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 33.16 ms
+2026-10-28 00:13:57,591 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 0.63 ms
+2026-10-28 00:22:13,586 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 3.86 ms
+2026-10-28 00:26:36,760 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-10-28 00:26:36,761 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-10-28 00:26:43,826 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-10-28 00:26:43,826 - INFO - CloudDesk - CloudDesk application startup completed
+2026-10-28 00:26:48,240 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 33.02 ms
+2026-10-28 00:26:50,584 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 0.34 ms
+2026-10-28 00:27:12,372 - INFO - CloudDesk - GET| /user/me| status = 404| duration = 0.70 ms
+2026-10-28 00:34:23,038 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 4.85 ms
+2026-10-28 00:35:19,958 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-10-28 00:35:19,958 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-10-28 00:35:22,896 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-10-28 00:35:22,896 - INFO - CloudDesk - CloudDesk application startup completed
+2026-10-28 00:35:22,928 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 24.37 ms
+2026-10-28 00:35:25,108 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 0.40 ms
+2026-10-28 00:35:28,354 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 0.91 ms
+2026-10-28 00:36:13,944 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 0.63 ms
+2026-10-28 00:36:29,234 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 0.52 ms
+2026-10-28 00:36:56,729 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 0.58 ms
+2026-10-28 00:39:56,236 - INFO - CloudDesk - POST| /api/v1/auth/login| status = 404| duration = 2.74 ms
+2026-10-28 00:40:16,654 - INFO - CloudDesk - POST| /api/v1/auth/login| status = 404| duration = 0.80 ms
+2026-10-28 00:41:08,395 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 0.62 ms
+2026-10-28 00:41:10,718 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 0.34 ms
+2026-10-28 00:41:30,192 - INFO - CloudDesk - POST| /auth/login| status = 404| duration = 0.58 ms
+2026-10-28 00:43:44,566 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-10-28 00:43:44,567 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-10-28 00:43:48,927 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-10-28 00:43:48,927 - INFO - CloudDesk - CloudDesk application startup completed
+2026-10-28 00:43:49,716 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-10-28 00:43:49,716 - INFO - CloudDesk - CloudDesk application shutdown completed
