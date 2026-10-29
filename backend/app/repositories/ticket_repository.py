@@ -1,5 +1,5 @@
 from app.models.ticket import Ticket
-from sqlalchemy.orm import Session,Query
+from sqlalchemy.orm import Session,Query,joinedload
 from sqlalchemy import and_
 from app.schemas.ticket import UpdateTicketRequest, PaginatedTicketResponse
 from app.enum.ticketQueryScope import TicketQueryScope
@@ -46,7 +46,7 @@ class TicketRepository():
                                                      Ticket.created_by == user_id)).one_or_none()
 
 
-    def update_ticket_by_id(self,id: int, update_request: UpdateTicketRequest) -> Ticket|None:        
+    def update_ticket_by_id(self,id: int,modified_by: int, update_request: UpdateTicketRequest) -> Ticket|None:        
         
         ticket = self.get_ticket_by_id(id=id)
 
@@ -59,6 +59,9 @@ class TicketRepository():
         
         for key, value in update_data.items():
             setattr(ticket,key,value)
+
+        # Set the user who modified the ticket
+        ticket.modified_by = modified_by
 
         self.db.commit()
         self.db.refresh(ticket)
@@ -118,6 +121,7 @@ class TicketRepository():
         # ordering the tickets based on the page.
         tickets = (
         query
+        .options(joinedload(Ticket.assigned_user))
         .order_by(Ticket.created_on.desc(), Ticket.id.desc())
         .offset(offset)
         .limit(page_size)

@@ -57,10 +57,11 @@ class TicketService:
         user_role = current_user.role.role_name
         # only the user provided values. Other fields are none
         update_data = update_request.model_dump(exclude_unset=True)
+        modified_by = current_user.id
 
         # No validation for Admin
         if user_role == "Admin":
-            return self.ticket_repository.update_ticket_by_id(id, update_request=update_request)
+            return self.ticket_repository.update_ticket_by_id(id,modified_by=modified_by, update_request=update_request)
 
         # Fetches the ticket by id and checks the user is authorized to perform changes
         ticket = self.get_ticket_by_id(id, current_user=current_user)
@@ -100,7 +101,8 @@ class TicketService:
                 )
             )
 
-        return self.ticket_repository.update_ticket_by_id(id, update_request = update_request)
+        return self.ticket_repository.update_ticket_by_id(id, modified_by = modified_by, 
+                                                          update_request = update_request)
          
     def delete_ticket_by_id(self, ticket_id: int, current_user:User):
         ticket = self.get_ticket_by_id(ticket_id, current_user=current_user)

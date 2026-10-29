@@ -4,6 +4,9 @@ export interface Ticket{
     description: string;
     status: string;
     priority: string;
+    assigned_to_name: string;
+    created_by_name: string;
+    modified_by_name: string;
 
 }
 
@@ -16,12 +19,12 @@ export interface PaginatedTicket{
 }
 
 export type TicketStatus =
-  | "OPEN"
-  | "IN_PROGRESS"
-  | "RESOLVED"
-  | "CLOSED";
+  | "Open"
+  | "In Progress"
+  | "Resolved"
+  | "Closed";
 
 export type TicketPriority =
-  | "LOW"
-  | "HIGH"
-  | "URGENT";
+  | "Low"
+  | "High"
+  | "Urgent";

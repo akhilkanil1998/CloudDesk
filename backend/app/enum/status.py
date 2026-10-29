@@ -1,7 +1,7 @@
 from enum import Enum
 
 class Status(Enum):
-    OPEN = "OPEN"
-    IN_PROGRESS = "IN_PROGRESS"
-    RESOLVED = "RESOLVED"
-    CLOSED = "CLOSED"
+    Open = "Open"
+    In_Progress = "In Progress"
+    Resolved = "Resolved"
+    Closed = "Closed"
