@@ -53,7 +53,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
     useEffect(() => {
     // this is the function which will run when the page loads to get the user.
     const loadCurrentUser = async() => {
-        console.log("Inside loadCurrentUser");
+    //     console.log("Inside loadCurrentUser");
         const token = localStorage.getItem("access_token");
         // Before calling /user/me, check whether we even have a token.
         // We don't call /user/me because there's no token to authenticate the request.
@@ -64,17 +64,17 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
          }
 
         try {
-                console.log("Before fetchCurrentUser");
+                // console.log("Before fetchCurrentUser");
 
             const user = await fetchCurrentUser();
-                console.error("After fetched user");
+                // console.error("After fetched user");
 
-            console.log("Fetched user:", user);
+            // console.log("Fetched user:", user);
             setUser(user);
         } catch (error) {
-                console.error("Failed to fetch current user", error);
+                 console.error("Failed to fetch current user", error);
 
-            console.error("Failed to fetch current user", error);
+            // console.error("Failed to fetch current user", error);
         } finally {
             setLoading(false);
         }

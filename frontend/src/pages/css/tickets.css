@@ -111,3 +111,63 @@
   background: #f1f5f9;
   border-color: #cbd5e1;
 }
+
+.ticket-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-ticket-button {
+  background-color: #4a7aff;
+  font-size: 20px;
+  color: white;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.2s ease;
+}
+
+.create-ticket-button:hover {
+  background-color: #345fd1;
+  cursor: pointer;
+}
+
+.pagination-btn{
+  border-radius: 50%; 
+  width: 30px;
+   aspect-ratio: 1; 
+   
+  place-items: center; 
+  /* STATE 1: Default (Unselected) - White background, blue details */
+  background-color: #ffffff;
+  color: #697684;
+  border: 2px solid #697684; /* Keeps the circle visible against white backgrounds */
+  
+  /* Smooth transition between states */
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.active-page {
+   border-radius: 50%; 
+  width: 30px;
+   aspect-ratio: 1; 
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+.pagination{
+  display: grid;
+  grid-template-columns:85% 15%; /* Two equal columns. Change to '30% 70%' for unequal width */
+  gap: 20px;
+  
+}
+.showing-page{
+  margin-top:10px;
+  margin-right: 10px;
+}
+
