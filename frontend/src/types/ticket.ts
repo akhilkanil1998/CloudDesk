@@ -10,6 +10,12 @@ export interface Ticket{
 
 }
 
+export interface CreateTicekt{
+  title: string;
+  description: string;
+  priority: string;
+}
+
 export interface PaginatedTicket{
     items: Ticket[];
     page: number;

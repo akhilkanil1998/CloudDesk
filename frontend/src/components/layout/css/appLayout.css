@@ -1,12 +1,25 @@
+/* Main application container */
 .app-layout {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
 }
 
+/* Main area beside sidebar */
 .main-area {
     flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
+/* Page content - only scrollable section */
 .page-content {
+    flex: 1;
+    min-height: 0;
     padding: 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #f8fafc;
 }
