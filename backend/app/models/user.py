@@ -14,7 +14,8 @@ class User(Base):
     __tablename__="users"
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     employee_id: Mapped[str] = mapped_column(String(20), unique=True)
-    employee_name: Mapped[str] = mapped_column(String(50))
+    first_name: Mapped[str] = mapped_column(String(50), nullable=True)
+    last_name: Mapped[str] = mapped_column(String(50), nullable=True)
     email: Mapped[str] = mapped_column(String(100))
     password_hash: Mapped[str] = mapped_column(String(100))
     role_id: Mapped[int] = mapped_column(ForeignKey("roles.id"))

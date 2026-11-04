@@ -41,6 +41,9 @@ class UserRepository:
     # fetches the user by id.
     def get_user_by_id(self, userid:int) -> User:
         user = self.db.query(User).filter(User.id==userid).first()
+        
+        if user is None:
+            return None
         return user
 
 

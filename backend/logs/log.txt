@@ -1,2 +1,1828 @@
-2026-11-01 22:25:42,632 - INFO - CloudDesk - CloudDesk application startup initiated
-2026-11-01 22:25:42,710 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 20:33:28,299 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 20:33:28,415 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 20:34:44,689 - INFO - CloudDesk - GET| /user/me| status = 401| duration = 103.02 ms
+2026-11-04 20:34:44,694 - INFO - CloudDesk - GET| /user/me| status = 401| duration = 1.35 ms
+2026-11-04 20:34:53,045 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 20:34:53,046 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 20:34:59,415 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 20:34:59,415 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 20:35:15,505 - INFO - CloudDesk - GET| /| status = 404| duration = 47.36 ms
+2026-11-04 20:35:17,589 - INFO - CloudDesk - GET| /| status = 404| duration = 0.78 ms
+2026-11-04 20:35:20,973 - INFO - CloudDesk - GET| /docs| status = 200| duration = 0.35 ms
+2026-11-04 20:35:21,595 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 199.42 ms
+2026-11-04 20:35:33,012 - INFO - CloudDesk - User Admin, CD-0003 has logged in successfully.
+2026-11-04 20:35:33,020 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 1188.21 ms
+2026-11-04 21:15:11,809 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 21:15:11,811 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 21:54:12,486 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 21:54:12,500 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 21:54:40,973 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 21:54:40,973 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 21:54:51,213 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 21:54:51,213 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 21:55:06,188 - INFO - CloudDesk - GET| /docs| status = 200| duration = 0.78 ms
+2026-11-04 21:55:06,714 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 217.47 ms
+2026-11-04 21:55:14,662 - ERROR - CloudDesk - POST | /auth/login | status=exception | duration=498.05 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\auth.py", line 28, in login
+    user = authentication_service.authenticate_user(
+        form_data.username,   # This will contain the email
+        form_data.password
+         )
+  File "D:\Project\CloudDesk\backend\app\services\auth_service.py", line 12, in authenticate_user
+    logger.info(f"User {user.employee_name}, {user.employee_id} has logged in successfully.")
+                        ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'employee_name'. Did you mean: 'employee_id'?
+2026-11-04 21:55:25,429 - ERROR - CloudDesk - POST | /auth/login | status=exception | duration=237.30 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\auth.py", line 28, in login
+    user = authentication_service.authenticate_user(
+        form_data.username,   # This will contain the email
+        form_data.password
+         )
+  File "D:\Project\CloudDesk\backend\app\services\auth_service.py", line 12, in authenticate_user
+    logger.info(f"User {user.employee_name}, {user.employee_id} has logged in successfully.")
+                        ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'employee_name'. Did you mean: 'employee_id'?
+2026-11-04 21:55:28,020 - INFO - CloudDesk - GET| /docs| status = 200| duration = 0.34 ms
+2026-11-04 21:55:28,128 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 0.70 ms
+2026-11-04 21:56:02,568 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 21:56:02,569 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 21:56:05,199 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 21:56:05,199 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 21:56:11,027 - INFO - CloudDesk - User Admin , CD-0003 has logged in successfully.
+2026-11-04 21:56:11,148 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 526.25 ms
+2026-11-04 21:56:23,120 - ERROR - CloudDesk - GET | /user/users | status=exception | duration=245.21 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 4 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'employee_name'), 'msg': 'Field required', 'input': <app.models.user.User object at 0x000002A5F314EAD0>}
+  {'type': 'string_type', 'loc': ('response', 0, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x000002A5F30F0C20>}
+  {'type': 'missing', 'loc': ('response', 1, 'employee_name'), 'msg': 'Field required', 'input': <app.models.user.User object at 0x000002A5F314E710>}
+  {'type': 'string_type', 'loc': ('response', 1, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x000002A5F30F0C20>}
+
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 31, in get_all_users
+    GET /user/users
+2026-11-04 21:56:44,908 - ERROR - CloudDesk - GET | /user/me | status=exception | duration=10.88 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 24, in get_me
+    employee_name=current_user.employee_name,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'employee_name'. Did you mean: 'employee_id'?
+2026-11-04 21:57:22,655 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 21:57:22,655 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 21:57:25,632 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 21:57:25,632 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 21:57:35,026 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 21:57:35,026 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 21:57:38,158 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 21:57:38,158 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 21:57:38,427 - INFO - CloudDesk - GET| /user/me| status = 200| duration = 256.26 ms
+2026-11-04 21:57:45,491 - ERROR - CloudDesk - GET | /user/users | status=exception | duration=20.53 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_type', 'loc': ('response', 0, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x0000020C15A0A710>}
+  {'type': 'string_type', 'loc': ('response', 1, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x0000020C15A0A710>}
+
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 32, in get_all_users
+    GET /user/users
+2026-11-04 22:02:10,980 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 22:02:10,980 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 22:02:13,745 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 22:02:13,745 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 22:39:29,788 - INFO - CloudDesk - GET| /docs| status = 200| duration = 5.36 ms
+2026-11-04 22:39:30,092 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 166.27 ms
+2026-11-04 22:39:38,157 - INFO - CloudDesk - User Admin , CD-0003 has logged in successfully.
+2026-11-04 22:39:38,256 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 594.54 ms
+2026-11-04 22:39:46,725 - INFO - CloudDesk - User Admin , CD-0003 has logged in successfully.
+2026-11-04 22:39:46,726 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 254.58 ms
+2026-11-04 22:39:55,521 - INFO - CloudDesk - GET| /user/me| status = 200| duration = 48.43 ms
+2026-11-04 22:40:01,996 - ERROR - CloudDesk - GET | /user/users | status=exception | duration=25.82 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_type', 'loc': ('response', 0, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x000001D41BE5A490>}
+  {'type': 'string_type', 'loc': ('response', 1, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x000001D41BE5A490>}
+
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 32, in get_all_users
+    GET /user/users
+2026-11-04 22:44:00,689 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 22:44:00,690 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 22:44:08,340 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 22:44:08,341 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 22:44:08,545 - ERROR - CloudDesk - GET | /user/users | status=exception | duration=162.03 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_type', 'loc': ('response', 0, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x00000187B1DE1940>}
+  {'type': 'string_type', 'loc': ('response', 1, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x00000187B1DE1940>}
+
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 32, in get_all_users
+    GET /user/users
+2026-11-04 22:44:11,348 - ERROR - CloudDesk - GET | /user/users | status=exception | duration=47.89 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_type', 'loc': ('response', 0, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x00000187B1E6B890>}
+  {'type': 'string_type', 'loc': ('response', 1, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x00000187B1E6B890>}
+
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 32, in get_all_users
+    GET /user/users
+2026-11-04 22:44:16,400 - INFO - CloudDesk - GET| /docs| status = 200| duration = 0.83 ms
+2026-11-04 22:44:16,918 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 306.06 ms
+2026-11-04 22:44:20,913 - INFO - CloudDesk - GET| /user/users| status = 401| duration = 4.01 ms
+2026-11-04 22:44:31,001 - INFO - CloudDesk - User Admin , CD-0003 has logged in successfully.
+2026-11-04 22:44:31,109 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 696.09 ms
+2026-11-04 22:44:33,629 - ERROR - CloudDesk - GET | /user/users | status=exception | duration=38.44 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_type', 'loc': ('response', 0, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x00000187B1E6A5D0>}
+  {'type': 'string_type', 'loc': ('response', 1, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x00000187B1E6A5D0>}
+
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 32, in get_all_users
+    GET /user/users
+2026-11-04 22:44:45,916 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 22:44:45,916 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 22:44:50,614 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 22:44:50,614 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 22:44:50,629 - INFO - CloudDesk - GET| /docs| status = 200| duration = 0.77 ms
+2026-11-04 22:44:50,788 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 70.03 ms
+2026-11-04 22:47:11,944 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 22:47:11,944 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 22:47:20,324 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 22:47:20,324 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 22:47:22,203 - INFO - CloudDesk - GET| /docs| status = 200| duration = 1.76 ms
+2026-11-04 22:47:22,440 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 129.52 ms
+2026-11-04 22:47:31,926 - INFO - CloudDesk - User Admin , CD-0003 has logged in successfully.
+2026-11-04 22:47:31,942 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 473.71 ms
+2026-11-04 22:47:36,788 - ERROR - CloudDesk - GET | /user/users | status=exception | duration=30.96 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_type', 'loc': ('response', 0, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x000001BAA4831160>}
+  {'type': 'string_type', 'loc': ('response', 1, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x000001BAA4831160>}
+
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 32, in get_all_users
+    GET /user/users
+2026-11-04 22:49:50,580 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 22:49:50,580 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 22:50:10,813 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 22:50:10,814 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 22:50:13,486 - INFO - CloudDesk - GET| /docs| status = 200| duration = 1.01 ms
+2026-11-04 22:50:13,773 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 157.89 ms
+2026-11-04 22:50:22,664 - INFO - CloudDesk - User Admin , CD-0003 has logged in successfully.
+2026-11-04 22:50:22,685 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 575.75 ms
+2026-11-04 22:50:54,893 - ERROR - CloudDesk - GET | /user/users | status=exception | duration=59.66 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_type', 'loc': ('response', 0, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x0000025AA3451160>}
+  {'type': 'string_type', 'loc': ('response', 1, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x0000025AA3451160>}
+
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 32, in get_all_users
+    GET /user/users
+2026-11-04 22:53:13,653 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 22:53:13,654 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 22:53:17,129 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 22:53:17,129 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 22:53:18,198 - INFO - CloudDesk - GET| /docs| status = 200| duration = 1.53 ms
+2026-11-04 22:53:18,520 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 176.14 ms
+2026-11-04 22:53:26,826 - INFO - CloudDesk - User Admin , CD-0003 has logged in successfully.
+2026-11-04 22:53:26,838 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 398.07 ms
+2026-11-04 22:53:30,650 - ERROR - CloudDesk - GET | /user/users | status=exception | duration=69.01 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'iteration_error', 'loc': ('response', 0), 'msg': "Error iterating over object, error: AttributeError: 'Role' object has no attribute 'name'", 'input': <generator object UserService.get_all_users.<locals>.<genexpr> at 0x00000225F2C63890>, 'ctx': {'error': "AttributeError: 'Role' object has no attribute 'name'"}}
+
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 32, in get_all_users
+    GET /user/users
+2026-11-04 22:54:13,886 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 22:54:13,886 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 22:54:16,924 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 22:54:16,925 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 22:54:18,416 - INFO - CloudDesk - GET| /docs| status = 200| duration = 1.04 ms
+2026-11-04 22:54:18,640 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 136.26 ms
+2026-11-04 22:54:28,859 - INFO - CloudDesk - User Admin , CD-0003 has logged in successfully.
+2026-11-04 22:54:28,875 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 436.51 ms
+2026-11-04 22:54:32,558 - ERROR - CloudDesk - GET | /user/users | status=exception | duration=31.16 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_type', 'loc': ('response', 0, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x000002641FB31160>}
+  {'type': 'string_type', 'loc': ('response', 1, 'role'), 'msg': 'Input should be a valid string', 'input': <app.models.roles.Role object at 0x000002641FB31160>}
+
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 32, in get_all_users
+    GET /user/users
+2026-11-04 22:56:22,313 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 22:56:22,314 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 22:56:25,966 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 22:56:25,966 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 22:56:34,376 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 22:56:34,376 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 22:56:36,914 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 22:56:36,914 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 22:56:37,551 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 22:56:37,551 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 22:56:40,583 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 22:56:40,583 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 22:56:43,234 - INFO - CloudDesk - GET| /docs| status = 200| duration = 0.71 ms
+2026-11-04 22:56:43,508 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 109.29 ms
+2026-11-04 22:56:53,631 - INFO - CloudDesk - User Admin , CD-0003 has logged in successfully.
+2026-11-04 22:56:53,647 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 588.52 ms
+2026-11-04 22:56:57,453 - INFO - CloudDesk - GET| /user/users| status = 200| duration = 141.64 ms
+2026-11-04 22:57:30,542 - INFO - CloudDesk - User Admin , CD-0003 has logged in successfully.
+2026-11-04 22:57:30,543 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 306.10 ms
+2026-11-04 23:08:57,860 - ERROR - CloudDesk - POST | /user/create_user | status=exception | duration=401.86 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 40, in create_user
+    return user_service.create_user(create_user_request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\app\services\user_service.py", line 54, in create_user
+    employee_name = request.full_name,
+                    ^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\pydantic\main.py", line 1042, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'CreateUserRequest' object has no attribute 'full_name'
+2026-11-04 23:09:55,922 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 23:09:55,923 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 23:09:59,595 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 23:09:59,595 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 23:10:00,365 - ERROR - CloudDesk - POST | /user/create_user | status=exception | duration=753.18 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "created_date" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (6, CD-0006, akhil-admin@clouddesk.com, $2b$12$mbG4ZKgp/qDanIIpAweVhetZEsHQBrJuREkrdmrkq1lvv3JhuhlZm, 1, null, Akhil, Anil).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 40, in create_user
+    return user_service.create_user(create_user_request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\app\services\user_service.py", line 60, in create_user
+    created_user = self.user_repository.create_user(new_user)
+  File "D:\Project\CloudDesk\backend\app\repositories\user_repository.py", line 22, in create_user
+    self.db.commit()
+    ~~~~~~~~~~~~~~^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "created_date" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (6, CD-0006, akhil-admin@clouddesk.com, $2b$12$mbG4ZKgp/qDanIIpAweVhetZEsHQBrJuREkrdmrkq1lvv3JhuhlZm, 1, null, Akhil, Anil).
+
+[SQL: INSERT INTO users (employee_id, first_name, last_name, email, password_hash, role_id) VALUES (%(employee_id)s, %(first_name)s, %(last_name)s, %(email)s, %(password_hash)s, %(role_id)s) RETURNING users.id, users.created_date]
+[parameters: {'employee_id': 'CD-0006', 'first_name': 'Akhil', 'last_name': 'Anil', 'email': 'akhil-admin@clouddesk.com', 'password_hash': '$2b$12$mbG4ZKgp/qDanIIpAweVhetZEsHQBrJuREkrdmrkq1lvv3JhuhlZm', 'role_id': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-11-04 23:10:05,622 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 23:10:05,623 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 23:10:09,211 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 23:10:09,212 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 23:10:11,075 - INFO - CloudDesk - GET| /docs| status = 200| duration = 0.99 ms
+2026-11-04 23:10:11,327 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 138.70 ms
+2026-11-04 23:10:18,899 - INFO - CloudDesk - User Admin , CD-0003 has logged in successfully.
+2026-11-04 23:10:18,916 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 400.86 ms
+2026-11-04 23:10:25,708 - ERROR - CloudDesk - POST | /user/create_user | status=exception | duration=300.51 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "created_date" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (7, CD-0007, akhil-admin@clouddesk.com, $2b$12$TBZRBBnD0k62xDg9dS7RE.uS.riGNDnRw5jnyWvq2dmyWOfbnfQ/q, 1, null, Akhil, Anil).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 40, in create_user
+    return user_service.create_user(create_user_request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\app\services\user_service.py", line 60, in create_user
+    created_user = self.user_repository.create_user(new_user)
+  File "D:\Project\CloudDesk\backend\app\repositories\user_repository.py", line 22, in create_user
+    self.db.commit()
+    ~~~~~~~~~~~~~~^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "created_date" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (7, CD-0007, akhil-admin@clouddesk.com, $2b$12$TBZRBBnD0k62xDg9dS7RE.uS.riGNDnRw5jnyWvq2dmyWOfbnfQ/q, 1, null, Akhil, Anil).
+
+[SQL: INSERT INTO users (employee_id, first_name, last_name, email, password_hash, role_id) VALUES (%(employee_id)s, %(first_name)s, %(last_name)s, %(email)s, %(password_hash)s, %(role_id)s) RETURNING users.id, users.created_date]
+[parameters: {'employee_id': 'CD-0007', 'first_name': 'Akhil', 'last_name': 'Anil', 'email': 'akhil-admin@clouddesk.com', 'password_hash': '$2b$12$TBZRBBnD0k62xDg9dS7RE.uS.riGNDnRw5jnyWvq2dmyWOfbnfQ/q', 'role_id': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-11-04 23:13:58,507 - INFO - CloudDesk - User CD-0008 created successfully.
+2026-11-04 23:13:58,510 - INFO - CloudDesk - POST| /user/create_user| status = 200| duration = 546.12 ms
+2026-11-04 23:29:14,600 - INFO - CloudDesk - User CD-0009 created successfully.
+2026-11-04 23:29:14,603 - INFO - CloudDesk - POST| /user/create_user| status = 200| duration = 393.86 ms
+2026-11-04 23:29:28,632 - INFO - CloudDesk - User CD-0010 created successfully.
+2026-11-04 23:29:28,632 - INFO - CloudDesk - POST| /user/create_user| status = 200| duration = 334.79 ms
+2026-11-04 23:30:14,177 - INFO - CloudDesk - POST| /user/create_user| status = 422| duration = 1655.28 ms
+2026-11-04 23:30:26,032 - INFO - CloudDesk - POST| /user/create_user| status = 409| duration = 12.29 ms
+2026-11-04 23:30:46,691 - ERROR - CloudDesk - GET | /user/get_user_by_id | status=exception | duration=25.27 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 50, in get_user_by_id
+    employee_name=user.employee_name,
+                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'employee_name'. Did you mean: 'employee_id'?
+2026-11-04 23:33:53,622 - ERROR - CloudDesk - GET | /user/get_user_by_id | status=exception | duration=36.46 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 50, in get_user_by_id
+    employee_name=user.employee_name,
+                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'employee_name'. Did you mean: 'employee_id'?
+2026-11-04 23:34:53,655 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 23:34:53,656 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 23:34:58,332 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 23:34:58,333 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 23:34:58,703 - INFO - CloudDesk - GET| /user/get_user_by_id| status = 200| duration = 355.43 ms
+2026-11-04 23:35:07,118 - ERROR - CloudDesk - GET | /user/get_user_by_id | status=exception | duration=25.29 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 48, in get_user_by_id
+    employee_id=user.employee_id,
+                ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'employee_id'
+2026-11-04 23:35:51,342 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 23:35:51,343 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 23:35:53,630 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 23:35:53,630 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 23:35:54,798 - ERROR - CloudDesk - GET | /user/get_user_by_id | status=exception | duration=147.40 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 48, in get_user_by_id
+    employee_id=user.employee_id,
+                ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'employee_id'
+2026-11-04 23:35:59,596 - ERROR - CloudDesk - GET | /user/get_user_by_id | status=exception | duration=25.43 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 48, in get_user_by_id
+    employee_id=user.employee_id,
+                ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'employee_id'
+2026-11-04 23:36:00,416 - ERROR - CloudDesk - GET | /user/get_user_by_id | status=exception | duration=14.06 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 48, in get_user_by_id
+    employee_id=user.employee_id,
+                ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'employee_id'
+2026-11-04 23:36:02,416 - INFO - CloudDesk - GET| /docs| status = 200| duration = 0.46 ms
+2026-11-04 23:36:02,607 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 86.98 ms
+2026-11-04 23:36:15,064 - INFO - CloudDesk - User Akhil Anil, CD-0008 has logged in successfully.
+2026-11-04 23:36:15,065 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 388.12 ms
+2026-11-04 23:36:23,932 - ERROR - CloudDesk - GET | /user/get_user_by_id | status=exception | duration=53.99 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\users.py", line 48, in get_user_by_id
+    employee_id=user.employee_id,
+                ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'employee_id'
+2026-11-04 23:38:52,087 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 23:38:52,089 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-04 23:38:54,768 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-04 23:38:54,768 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-04 23:38:56,753 - INFO - CloudDesk - GET| /user/get_user_by_id| status = 404| duration = 259.41 ms
+2026-11-04 23:39:14,727 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-04 23:39:14,728 - INFO - CloudDesk - CloudDesk application shutdown completed

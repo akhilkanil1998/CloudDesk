@@ -1,5 +1,5 @@
 # this is like the controller. It accepts the client request and returns the response
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException, status
 from app.dependencies.auth import get_current_user
 from app.dependencies.permissions import require_roles
 from app.models.user import User
@@ -21,7 +21,8 @@ def get_me(current_user: User = Depends(get_current_user)):
     return UserResponse(
         employee_id=current_user.employee_id,
         email=current_user.email,
-        employee_name=current_user.employee_name,
+        first_name=current_user.first_name,
+        last_name=current_user.last_name,
         role=current_user.role.role_name
     )
 
@@ -34,7 +35,8 @@ def get_all_users(user_service: UserService = Depends(get_user_service),
     return user_service.get_all_users()
 
 @user_router.post("/create_user")
-def create_user( create_user_request: CreateUserRequest, user_service: UserService = Depends(get_user_service)):
+def create_user( create_user_request: CreateUserRequest, user_service: UserService = Depends(get_user_service),
+                admin_user: User = Depends(require_roles(["Admin"]))):
         return user_service.create_user(create_user_request)
 
 
@@ -42,8 +44,15 @@ def create_user( create_user_request: CreateUserRequest, user_service: UserServi
 def get_user_by_id(userid: int,user_service: UserService = Depends(get_user_service),
                    admin_user: User = Depends(require_roles(["Admin"]))):
      user = user_service.get_user_by_id(userid=userid)
+     
+     if user is None:
+          raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"User with ID {userid} not found"
+        )
      return UserResponse(
             employee_id=user.employee_id,
             email=user.email,
-            employee_name=user.employee_name,
+            first_name=user.first_name,
+            last_name=user.last_name,
             role=user.role.role_name)

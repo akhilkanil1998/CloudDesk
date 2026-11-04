@@ -14,7 +14,15 @@ class UserService:
         self.role_repository = role_repository
     
     def get_all_users(self) -> list[User]:
-        return self.user_repository.get_all_users()
+        users = self.user_repository.get_all_users()
+        return ( {
+        "employee_id": user.employee_id,
+        "email": user.email,
+        "first_name": user.first_name,
+        "last_name": user.last_name,
+        "role": user.role.role_name
+    }
+    for user in users)
     
     
    
@@ -43,7 +51,8 @@ class UserService:
         generated_employee_id = f"CD-{sequence:04d}"
         new_user = User(
             employee_id = generated_employee_id,
-            employee_name = request.full_name,
+            first_name = request.first_name,
+            last_name = request.last_name,
             email = request.email,
             password_hash = hashed_password,
             role_id = request.role_id       

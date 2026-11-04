@@ -9,7 +9,7 @@ class AuthenticationService:
     def authenticate_user( self, email:str, password:str) -> User|None:
         user = self.auth_repository.authenticate_user(email,password)
         if user:
-            logger.info(f"User {user.employee_name}, {user.employee_id} has logged in successfully.")
+            logger.info(f"User {user.first_name} {user.last_name}, {user.employee_id} has logged in successfully.")
         return user
         
 

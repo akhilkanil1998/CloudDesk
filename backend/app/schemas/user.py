@@ -1,12 +1,18 @@
-from pydantic import BaseModel,ConfigDict, EmailStr
+from pydantic import BaseModel,ConfigDict, EmailStr, field_validator
 from typing import Optional
 
 # Response to the client when user has been validated using token
 class UserResponse(BaseModel):
     employee_id: str
     email: EmailStr
-    employee_name: str
+    first_name: str
+    last_name: str
     role: str
+    
+    @field_validator("role", mode="before")
+    @classmethod
+    def get_role_name(cls, value):
+        return value.name if hasattr(value, "name") else value
 
 
     # Tells pydatnic not to expect dictionary. 
@@ -15,15 +21,15 @@ class UserResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
 class CreateUserRequest(BaseModel):        
-    full_name: str
+    first_name: str
+    last_name: str
     email: EmailStr
     password: str
     role_id: int
 
+    # Request to partially update a user
 class UpdateUserRequest(BaseModel):
-    full_name: str
-    email: EmailStr
-
-class UpdateUserRequest(BaseModel):        
-    full_name: Optional[str] = None
-    role_id: Optional[int] = None
+    first_name: str | None = None
+    last_name: str | None = None
+    email: EmailStr | None = None
+    role_id: int | None = None
