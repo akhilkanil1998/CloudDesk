@@ -1,6 +1,8 @@
 from pydantic import BaseModel, ConfigDict, AliasPath, Field
-from app.enum.priority import Priority
-from app.enum.status import Status
+from app.enums.priority import Priority
+from app.enums.status import Status
+from datetime import datetime
+
 
 class TicketResponse(BaseModel):
     id: int
@@ -9,6 +11,7 @@ class TicketResponse(BaseModel):
     status: str
     priority: str
     assigned_to: int | None
+    created_on: datetime | None
     assigned_to_name: str | None = Field(
         default=None,
         validation_alias=AliasPath("assigned_user", "employee_name"),

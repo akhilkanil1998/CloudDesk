@@ -1,5 +1,5 @@
 import { instance } from "./axiosClient"
-import type {TicketStatus,TicketPriority,PaginatedTicket} from "../types/ticket"
+import type {TicketStatus,TicketPriority,PaginatedTicket, CreateTicket} from "../types/ticket"
 
 
 export const fetchPaginatedTickets = async(page:number,
@@ -16,3 +16,8 @@ export const fetchPaginatedTickets = async(page:number,
     });
     return  response.data;
     };
+
+  export const createTicket = async(ticket:CreateTicket) =>{
+    const response = await instance.post<CreateTicket>("/tickets", ticket);
+    return response;
+  };

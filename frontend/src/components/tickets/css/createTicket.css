@@ -153,3 +153,9 @@ padding: 20px 14px;
    border-color: #1e293b;
 }
 
+.file-upload-btn::file-selector-button{
+    border-radius: 10px;
+    background-color: #2563eb;  
+     color: #FFFFFF; 
+}
+

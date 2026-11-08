@@ -5,8 +5,8 @@ from app.dependencies.tickets import get_ticket_service
 from app.dependencies.auth import get_current_user
 from app.models.user import User
 from app.schemas.ticket import UpdateTicketRequest,PaginatedTicketResponse
-from app.enum.priority import Priority
-from app.enum.status import Status
+from app.enums.priority import Priority
+from app.enums.status import Status
 
 
 ticket_router = APIRouter(

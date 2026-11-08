@@ -1,4 +1,3 @@
-
 import { FiEdit2 } from "react-icons/fi";
 import type { PaginatedTicket } from "../../types/ticket";
 
@@ -34,6 +33,7 @@ export const TicketTable = ({
             <th>Priority</th>
             <th>Assigned To</th>
             <th>Created By</th>
+            <th>Created On</th>
             <th></th>
           </tr>
         </thead>
@@ -64,6 +64,7 @@ export const TicketTable = ({
 
               <td>{item.assigned_to_name}</td>
               <td>{item.created_by_name}</td>
+              <td>{new Date(item.created_on).toLocaleDateString("en-IN")}</td>
 
               <td>
                 <button

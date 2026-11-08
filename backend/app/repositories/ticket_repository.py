@@ -2,9 +2,9 @@ from app.models.ticket import Ticket
 from sqlalchemy.orm import Session,Query,joinedload
 from sqlalchemy import and_
 from app.schemas.ticket import UpdateTicketRequest, PaginatedTicketResponse
-from app.enum.ticketQueryScope import TicketQueryScope
-from app.enum.status import Status
-from app.enum.priority import Priority
+from app.enums.ticketQueryScope import TicketQueryScope
+from app.enums.status import Status
+from app.enums.priority import Priority
 
 class TicketRepository():
     def __init__(self, db:Session):

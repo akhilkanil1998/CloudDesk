@@ -6,14 +6,15 @@ export interface Ticket{
     priority: string;
     assigned_to_name: string;
     created_by_name: string;
+    created_on:string;
     modified_by_name: string;
 
 }
 
-export interface CreateTicekt{
-  title: string;
-  description: string;
-  priority: string;
+export interface CreateTicket{
+  title: string|null;
+  description: string|null;
+  priority: string|null;
 }
 
 export interface PaginatedTicket{

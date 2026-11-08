@@ -4,9 +4,9 @@ from app.models.ticket import Ticket
 from app.models.user import User
 from app.schemas.ticket import UpdateTicketRequest
 from fastapi import HTTPException,status
-from app.enum.ticketQueryScope import TicketQueryScope
-from app.enum.status import Status
-from app.enum.priority import Priority
+from app.enums.ticketQueryScope import TicketQueryScope
+from app.enums.status import Status
+from app.enums.priority import Priority
 from app.core.logging_config import logger
 
 class TicketService:

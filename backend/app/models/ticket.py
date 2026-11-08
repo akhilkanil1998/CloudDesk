@@ -2,8 +2,8 @@ from app.db.database import Base
 from sqlalchemy.orm import Mapped,mapped_column, relationship
 from sqlalchemy import String,Text,ForeignKey,func,Enum as SQLEnum
 from datetime import datetime
-from app.enum.priority import Priority
-from app.enum.status import Status
+from app.enums.priority import Priority
+from app.enums.status import Status
 from app.models.user import User
 
 

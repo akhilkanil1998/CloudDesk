@@ -1,5 +1,5 @@
 import {  createContext } from "react";
-import type { Roles } from "../types/roles";
+import type { Roles } from "../../types/roles";
 
 // This interface would be returned.
 export interface User {

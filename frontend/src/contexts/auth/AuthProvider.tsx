@@ -2,8 +2,8 @@
 // It allows creating a lightweight global state accessible by any component.
 
 import { useState, useEffect,useCallback, type ReactNode } from "react";
-import { AuthContext, type User } from "./AuthContext";
-import { fetchCurrentUser } from "../services/UserService";
+import { AuthContext, type User } from "../auth/AuthContext";
+import { fetchCurrentUser } from "../../services/UserService";
 
 
 // This is to show who is allowed inside the Provider
