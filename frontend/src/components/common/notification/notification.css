@@ -40,3 +40,24 @@
   background-color: #eff6ff;
   border: 1px solid #2563eb;
 }
+.notification-error {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 2px 6px;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  opacity: 0.7;
+}

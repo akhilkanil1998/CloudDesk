@@ -43,6 +43,7 @@ export const CreateTicketForm = () => {
       console.log("inside try block");
       await CreateTicketService(payload);
       showSuccess("Ticket created successfully");
+      navigate('/tickets'); 
     } catch (error) {
       showError("Failed to create ticket");
       console.log("error: " + error);

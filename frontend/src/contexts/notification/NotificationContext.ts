@@ -14,6 +14,7 @@ export interface NotificationContextType {
   showError: (message: string) => void;
   showWarning: (message: string) => void;
   showInfo: (message: string) => void;
+  dismissNotification: () => void;
 }
 
 export const NotificationContext = createContext<

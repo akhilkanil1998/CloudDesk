@@ -54,6 +54,10 @@ export const NotificationProvider = ({
     setNotification({ id: Date.now(), message, type });
   };
 
+  const dismissNotification = () =>{
+    setNotification(null);
+  };
+
   // Wrapper functions provide a simple API for other components.
   // Each function specifies the notification type internally.
   const showSuccess = (message: string) => {
@@ -77,6 +81,7 @@ export const NotificationProvider = ({
     showError,
     showWarning,
     showInfo,
+    dismissNotification
   };
 
   // Makes the notification state and functions accessible
