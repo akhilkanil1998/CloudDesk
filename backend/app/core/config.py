@@ -21,6 +21,11 @@ class Settings(BaseSettings):
 
     # Log directory
     LOG_DIR: str
+    
+    #AWS S3 config
+    AWS_REGION:str
+    AWS_S3_BUCKET:str
+    
 
     model_config = SettingsConfigDict(
         env_file=".env",
