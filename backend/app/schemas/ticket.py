@@ -34,7 +34,7 @@ class CreateTicketRequest(BaseModel):
     title: str
     description: str
     priority: Priority = Priority.Low #default to Low priority
-
+  
 
 class UpdateTicketRequest(BaseModel): 
     title: str | None=None

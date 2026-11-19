@@ -9,7 +9,7 @@ from app.core.config import settings
 from alembic import context
 
 # importing the models to create migration.
-from app.models import user,roles,ticket
+from app.models import user,roles,ticket,attachment
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

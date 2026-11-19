@@ -26,3 +26,5 @@ class Ticket(Base):
     assigned_user: Mapped["User | None"] = relationship("User", foreign_keys=[assigned_to])
     created_user: Mapped["User|None"] = relationship("User", foreign_keys=[created_by])
     modified_user: Mapped["User|None"] = relationship("User", foreign_keys=[modified_by])
+    
+

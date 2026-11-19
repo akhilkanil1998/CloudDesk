@@ -7,6 +7,7 @@ from app.models.user import User
 from app.schemas.ticket import UpdateTicketRequest,PaginatedTicketResponse
 from app.enums.priority import Priority
 from app.enums.status import Status
+from fastapi import UploadFile, File, Form
 
 
 ticket_router = APIRouter(
@@ -15,10 +16,19 @@ ticket_router = APIRouter(
 )
 
 @ticket_router.post("/")
-def create_ticket(ticket: CreateTicketRequest, 
+def create_ticket( title: str = Form(...),
+    description: str = Form(...),
+    priority: Priority = Form(Priority.Low),
+    file: UploadFile | None = File(None),
                   ticket_service: TicketService = Depends(get_ticket_service),
                   current_user: User= Depends(get_current_user)):
-    ticket_service.create_ticket(ticket=ticket, current_user=current_user)
+    # Creates the Ticket object
+    ticket = CreateTicketRequest(
+    title=title,
+    description=description,
+    priority=priority)
+    # calls the service layer
+    ticket_service.create_ticket(ticket=ticket, file=file, current_user=current_user)
 
 
 # @ticket_router.get("tickets", response_model= list[TicketResponse])
@@ -52,3 +62,4 @@ def get_tickets_with_page(page: int = Query(1,ge=1), page_size: int = Query(20, 
         current_user=current_user,
         status=status,
         priority=priority)
+ 

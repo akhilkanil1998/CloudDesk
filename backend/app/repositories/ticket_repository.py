@@ -5,17 +5,18 @@ from app.schemas.ticket import UpdateTicketRequest, PaginatedTicketResponse
 from app.enums.ticketQueryScope import TicketQueryScope
 from app.enums.status import Status
 from app.enums.priority import Priority
+from fastapi import UploadFile,File
+from app.utils.aws_s3_utils import upload_file_to_s3
 
 class TicketRepository():
     def __init__(self, db:Session):
         self.db = db
 
 
-    def create_ticket(self, ticket:Ticket):
+    def create_ticket(self, ticket:Ticket, file_to_upload: UploadFile|None = File(None)):
         try:
             self.db.add(ticket)
-            self.db.commit()
-            self.db.refresh(ticket)
+            self.db.flush()           
 
         except Exception:
             self.db.rollback()

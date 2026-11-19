@@ -1,34 +1,274 @@
-2026-11-10 22:36:43,980 - INFO - CloudDesk - CloudDesk application startup initiated
-2026-11-10 22:36:44,012 - INFO - CloudDesk - CloudDesk application startup completed
-2026-11-10 22:37:00,862 - INFO - CloudDesk - GET| /user/me| status = 401| duration = 329.26 ms
-2026-11-10 22:37:00,870 - INFO - CloudDesk - GET| /user/me| status = 401| duration = 4.19 ms
-2026-11-10 22:37:13,262 - INFO - CloudDesk - User Akhil Anil, CD-0008 has logged in successfully.
-2026-11-10 22:37:13,325 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 1341.82 ms
-2026-11-10 22:37:13,369 - INFO - CloudDesk - GET| /user/me| status = 200| duration = 36.13 ms
-2026-11-10 22:37:14,712 - INFO - CloudDesk - GET| /tickets| status = 307| duration = 19.87 ms
-2026-11-10 22:37:14,717 - INFO - CloudDesk - GET| /tickets| status = 307| duration = 1.73 ms
-2026-11-10 22:37:14,803 - INFO - CloudDesk - GET| /tickets/| status = 200| duration = 82.92 ms
-2026-11-10 22:37:14,822 - INFO - CloudDesk - GET| /tickets/| status = 200| duration = 15.20 ms
-2026-11-10 22:37:26,013 - INFO - CloudDesk - GET| /tickets| status = 307| duration = 0.36 ms
-2026-11-10 22:37:26,016 - INFO - CloudDesk - GET| /tickets| status = 307| duration = 0.50 ms
-2026-11-10 22:37:26,041 - INFO - CloudDesk - GET| /tickets/| status = 200| duration = 22.86 ms
-2026-11-10 22:37:26,052 - INFO - CloudDesk - GET| /tickets/| status = 200| duration = 8.92 ms
-2026-11-10 22:37:44,837 - INFO - CloudDesk - GET| /tickets| status = 307| duration = 0.61 ms
-2026-11-10 22:37:44,841 - INFO - CloudDesk - GET| /tickets| status = 307| duration = 0.59 ms
-2026-11-10 22:37:44,857 - INFO - CloudDesk - GET| /tickets/| status = 200| duration = 12.59 ms
-2026-11-10 22:37:44,877 - INFO - CloudDesk - GET| /tickets/| status = 200| duration = 16.72 ms
-2026-11-10 22:38:07,914 - INFO - CloudDesk - GET| /tickets| status = 307| duration = 2.22 ms
-2026-11-10 22:38:07,942 - INFO - CloudDesk - GET| /tickets/| status = 200| duration = 19.96 ms
-2026-11-10 22:38:10,030 - INFO - CloudDesk - GET| /tickets| status = 307| duration = 0.55 ms
-2026-11-10 22:38:10,081 - INFO - CloudDesk - GET| /tickets/| status = 200| duration = 21.70 ms
-2026-11-10 22:49:45,623 - INFO - CloudDesk - POST| /tickets| status = 307| duration = 3.46 ms
-2026-11-10 22:49:45,707 - INFO - CloudDesk - Ticket 81 created successfully. User id CD-0008
-2026-11-10 22:49:45,708 - INFO - CloudDesk - POST| /tickets/| status = 200| duration = 80.69 ms
-2026-11-10 22:49:45,728 - INFO - CloudDesk - GET| /tickets| status = 307| duration = 0.49 ms
-2026-11-10 22:49:45,733 - INFO - CloudDesk - GET| /tickets| status = 307| duration = 2.00 ms
-2026-11-10 22:49:45,757 - INFO - CloudDesk - GET| /tickets/| status = 200| duration = 20.33 ms
-2026-11-10 22:49:45,775 - INFO - CloudDesk - GET| /tickets/| status = 200| duration = 14.88 ms
-2026-11-10 22:56:31,569 - INFO - CloudDesk - GET| /tickets| status = 307| duration = 0.92 ms
-2026-11-10 22:56:31,595 - INFO - CloudDesk - GET| /tickets/| status = 200| duration = 21.54 ms
-2026-11-10 23:07:11,697 - INFO - CloudDesk - CloudDesk application shutdown initiated
-2026-11-10 23:07:12,149 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-19 23:17:07,876 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-19 23:17:07,960 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-19 23:17:36,213 - INFO - CloudDesk - GET| /| status = 404| duration = 26.14 ms
+2026-11-19 23:17:36,268 - INFO - CloudDesk - GET| /favicon.ico| status = 404| duration = 0.35 ms
+2026-11-19 23:17:39,056 - INFO - CloudDesk - GET| /docs| status = 200| duration = 0.30 ms
+2026-11-19 23:17:39,242 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 63.72 ms
+2026-11-19 23:17:48,696 - INFO - CloudDesk - User Akhil Anil, CD-0008 has logged in successfully.
+2026-11-19 23:17:48,754 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 841.53 ms
+2026-11-19 23:18:07,803 - ERROR - CloudDesk - POST | /tickets/ | status=exception | duration=257.28 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 473, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\dependencies\utils.py", line 680, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\dependencies\tickets.py", line 18, in get_ticket_service
+    return TicketService(ticket_repository=ticket_repository,
+                         attachment_repository=attachment_repository)
+TypeError: TicketService.__init__() missing 1 required positional argument: 'db'
+2026-11-19 23:23:17,870 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-19 23:23:17,870 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-19 23:23:26,878 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-19 23:23:26,878 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-19 23:23:34,166 - INFO - CloudDesk - GET| /docs| status = 200| duration = 9.38 ms
+2026-11-19 23:23:34,416 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 114.65 ms
+2026-11-19 23:23:41,170 - INFO - CloudDesk - User Akhil Anil, CD-0008 has logged in successfully.
+2026-11-19 23:23:41,185 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 586.75 ms
+2026-11-19 23:23:52,093 - ERROR - CloudDesk - POST | /tickets/ | status=exception | duration=2082.51 ms
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "attachments" does not exist
+LINE 1: INSERT INTO attachments (ticket_id, file_name, s3_object_key...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Project\CloudDesk\backend\main.py", line 37, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Project\CloudDesk\backend\app\api\v1\tickets.py", line 31, in create_ticket
+    ticket_service.create_ticket(ticket=ticket, file=file, current_user=current_user)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\app\services\ticket_service.py", line 44, in create_ticket
+    self.attachment_repository.create_attachment(attachment=attachment)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\app\repositories\attachment_repository.py", line 12, in create_attachment
+    self.db.flush()
+    ~~~~~~~~~~~~~^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Project\CloudDesk\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "attachments" does not exist
+LINE 1: INSERT INTO attachments (ticket_id, file_name, s3_object_key...
+                    ^
+
+[SQL: INSERT INTO attachments (ticket_id, file_name, s3_object_key, uploaded_by) VALUES (%(ticket_id)s, %(file_name)s, %(s3_object_key)s, %(uploaded_by)s) RETURNING attachments.id, attachments.uploaded_on]
+[parameters: {'ticket_id': 82, 'file_name': 'New Punch-ev-Brochure-R5-Part-1 19 feb.pdf', 's3_object_key': 'attachments/db10c52a-f75d-4fbe-8f7e-cab34892127d.pdf', 'uploaded_by': 8}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-11-19 23:26:19,972 - INFO - CloudDesk - CloudDesk application shutdown initiated
+2026-11-19 23:26:19,972 - INFO - CloudDesk - CloudDesk application shutdown completed
+2026-11-19 23:37:09,576 - INFO - CloudDesk - CloudDesk application startup initiated
+2026-11-19 23:37:09,576 - INFO - CloudDesk - CloudDesk application startup completed
+2026-11-19 23:37:09,615 - INFO - CloudDesk - GET| /docs| status = 200| duration = 0.81 ms
+2026-11-19 23:37:09,814 - INFO - CloudDesk - GET| /openapi.json| status = 200| duration = 90.17 ms
+2026-11-19 23:37:18,285 - INFO - CloudDesk - User Akhil Anil, CD-0008 has logged in successfully.
+2026-11-19 23:37:18,301 - INFO - CloudDesk - POST| /auth/login| status = 200| duration = 557.88 ms
+2026-11-19 23:37:31,751 - INFO - CloudDesk - Ticket 83 created successfully by CD-0008
+2026-11-19 23:37:31,753 - INFO - CloudDesk - POST| /tickets/| status = 200| duration = 3270.80 ms

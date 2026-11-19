@@ -1,5 +1,7 @@
 from app.repositories.ticket_repository import TicketRepository
+from app.repositories.attachment_repository import AttachmentRepository
 from app.schemas.ticket import CreateTicketRequest, TicketResponse,PaginatedTicketResponse
+from app.models.attachment import Attachment
 from app.models.ticket import Ticket
 from app.models.user import User
 from app.schemas.ticket import UpdateTicketRequest
@@ -8,20 +10,54 @@ from app.enums.ticketQueryScope import TicketQueryScope
 from app.enums.status import Status
 from app.enums.priority import Priority
 from app.core.logging_config import logger
+from fastapi import UploadFile, File
+from sqlalchemy.orm import Session
+from app.utils.aws_s3_utils import upload_file_to_s3, delete_file_from_s3
 
 class TicketService:
-    def __init__(self, ticket_repository:TicketRepository):
+    def __init__(self,db: Session, ticket_repository:TicketRepository, attachment_repository:AttachmentRepository):
+        self.db = db
         self.ticket_repository = ticket_repository
+        self.attachment_repository = attachment_repository
 
-    def create_ticket(self,ticket:CreateTicketRequest, current_user:User) -> TicketResponse:
-        ticket = Ticket(title = ticket.title, 
-                        description= ticket.description,
-                        priority = ticket.priority,
-                        created_by = current_user.id)
+    def create_ticket(self,ticket:CreateTicketRequest, current_user:User,
+                      file: UploadFile | None = None) -> TicketResponse:
+        file_object_key = None
+        try:
+            ticket = Ticket(title = ticket.title, 
+                            description= ticket.description,
+                            priority = ticket.priority,
+                            created_by = current_user.id)
+            
+                     
+            response_ticket = self.ticket_repository.create_ticket(ticket=ticket)
+            if file:
+                file_object_key = upload_file_to_s3(file=file)
+                
+                if file_object_key:
+                    attachment = Attachment(
+                        ticket_id=response_ticket.id,
+                        file_name = file.filename,
+                        s3_object_key = file_object_key,
+                        uploaded_by = current_user.id                        
+                    ) 
+                    self.attachment_repository.create_attachment(attachment=attachment)
+            self.db.commit()
+            self.db.refresh(response_ticket)    
+                            
+            logger.info(f"Ticket {response_ticket.id} created successfully by {current_user.employee_id}")
+            return response_ticket
         
-        response_ticket = self.ticket_repository.create_ticket(ticket=ticket)
-        logger.info(f"Ticket {response_ticket.id} created successfully. User id {current_user.employee_id}")
-        return response_ticket
+        except Exception:
+            self.db.rollback()
+
+            if file_object_key:
+                try:
+                    delete_file_from_s3(file_object_key)
+                except Exception:
+                    logger.exception("Failed to clean up uploaded S3 object")
+
+            raise
 
 
     def get_all_tickets(self,current_user:User) -> list[Ticket]|None:
