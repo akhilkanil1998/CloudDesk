@@ -1,94 +1,91 @@
-from app.repositories.ticket_repository import TicketRepository
-from app.repositories.attachment_repository import AttachmentRepository
-from app.schemas.ticket import CreateTicketRequest, TicketResponse,PaginatedTicketResponse
+from fastapi import HTTPException, UploadFile, status, File
+from sqlalchemy.orm import Session
+
+from app.core.logging_config import logger
+from app.enums.priority import Priority
+from app.enums.status import Status
+from app.enums.ticketQueryScope import TicketQueryScope
 from app.models.attachment import Attachment
 from app.models.ticket import Ticket
 from app.models.user import User
-from app.schemas.ticket import UpdateTicketRequest
-from fastapi import HTTPException,status
-from app.enums.ticketQueryScope import TicketQueryScope
-from app.enums.status import Status
-from app.enums.priority import Priority
-from app.core.logging_config import logger
-from fastapi import UploadFile, File
-from sqlalchemy.orm import Session
-from app.utils.aws_s3_utils import upload_file_to_s3, delete_file_from_s3
+from app.repositories.ticket_repository import TicketRepository
+from app.schemas.ticket import (
+    CreateTicketRequest,
+    PaginatedTicketResponse,
+    TicketResponse,
+    UpdateTicketRequest,
+)
+from app.services.attachment_service import AttachmentService
+
 
 class TicketService:
-    def __init__(self,db: Session, ticket_repository:TicketRepository, attachment_repository:AttachmentRepository):
+    def __init__(
+        self,
+        db: Session,
+        ticket_repository: TicketRepository,
+        attachment_service: AttachmentService,
+    ):
         self.db = db
         self.ticket_repository = ticket_repository
-        self.attachment_repository = attachment_repository
+        self.attachment_service = attachment_service
 
-    def create_ticket(self,ticket:CreateTicketRequest, current_user:User,
-                      file: UploadFile | None = None) -> TicketResponse:
-        file_object_key = None
+    def create_ticket(
+        self,
+        ticket: CreateTicketRequest,
+        current_user: User,
+        files: list[UploadFile] = File(default=[]),
+    ) -> TicketResponse:
+
         try:
-            ticket = Ticket(title = ticket.title, 
-                            description= ticket.description,
-                            priority = ticket.priority,
-                            created_by = current_user.id)
-            
-                     
+            ticket = Ticket(
+                title=ticket.title,
+                description=ticket.description,
+                priority=ticket.priority,
+                created_by=current_user.id,
+            )
+
             response_ticket = self.ticket_repository.create_ticket(ticket=ticket)
-            if file:
-                file_object_key = upload_file_to_s3(file=file)
-                
-                if file_object_key:
-                    attachment = Attachment(
-                        ticket_id=response_ticket.id,
-                        file_name = file.filename,
-                        s3_object_key = file_object_key,
-                        uploaded_by = current_user.id                        
-                    ) 
-                    self.attachment_repository.create_attachment(attachment=attachment)
-            self.db.commit()
-            self.db.refresh(response_ticket)    
-                            
-            logger.info(f"Ticket {response_ticket.id} created successfully by {current_user.employee_id}")
+            if files:
+                self.attachment_service.create_attachment(
+                    files=files, ticket_id=response_ticket.id, current_user=current_user
+                )
+
             return response_ticket
-        
-        except Exception:
-            self.db.rollback()
 
-            if file_object_key:
-                try:
-                    delete_file_from_s3(file_object_key)
-                except Exception:
-                    logger.exception("Failed to clean up uploaded S3 object")
-
+        except Exception:  # noqa: TRY203
             raise
 
+    def get_all_tickets(self, current_user: User) -> list[Ticket] | None:
 
-    def get_all_tickets(self,current_user:User) -> list[Ticket]|None:
-        
-
-        if(current_user.role.role_name == "Admin" ):
+        if current_user.role.role_name == "Admin":
             return self.ticket_repository.get_all_tickets()
-            
 
-        if(current_user.role.role_name == "Agent"):
+        if current_user.role.role_name == "Agent":
             return self.ticket_repository.get_all_tickets_by_assignee(current_user.id)
 
-        if(current_user.role.role_name == "User"):
-            return self.ticket_repository.get_all_tickets_by_created_user(current_user.id)
-        
+        if current_user.role.role_name == "User":
+            return self.ticket_repository.get_all_tickets_by_created_user(
+                current_user.id
+            )
 
-    def get_ticket_by_id(self,id,current_user: User) -> Ticket|None:
+    def get_ticket_by_id(self, id, current_user: User) -> Ticket | None:
 
-
-        if(current_user.role.role_name == "Admin" ):
+        if current_user.role.role_name == "Admin":
             return self.ticket_repository.get_ticket_by_id(id=id)
 
-        elif(current_user.role.role_name == "Agent"):
-            return self.ticket_repository.get_ticket_by_id_and_assignee(id=id, user_id=current_user.id)
+        elif current_user.role.role_name == "Agent":
+            return self.ticket_repository.get_ticket_by_id_and_assignee(
+                id=id, user_id=current_user.id
+            )
 
-        elif(current_user.role.role_name == "User"):
-                    return self.ticket_repository.get_ticket_by_id_and_created(id=id, user_id=current_user.id)
+        elif current_user.role.role_name == "User":
+            return self.ticket_repository.get_ticket_by_id_and_created(
+                id=id, user_id=current_user.id
+            )
 
-
-    def update_ticket_by_id(self, id: int, current_user: User, 
-                            update_request: UpdateTicketRequest) -> Ticket|None:
+    def update_ticket_by_id(
+        self, id: int, current_user: User, update_request: UpdateTicketRequest
+    ) -> Ticket | None:
 
         user_role = current_user.role.role_name
         # only the user provided values. Other fields are none
@@ -97,36 +94,28 @@ class TicketService:
 
         # No validation for Admin
         if user_role == "Admin":
-            return self.ticket_repository.update_ticket_by_id(id,modified_by=modified_by, update_request=update_request)
+            return self.ticket_repository.update_ticket_by_id(
+                id, modified_by=modified_by, update_request=update_request
+            )
 
         # Fetches the ticket by id and checks the user is authorized to perform changes
         ticket = self.get_ticket_by_id(id, current_user=current_user)
 
         if user_role == "Agent":
-
             if not ticket:
                 return None
             # forbidden_fields set to tell that it will be rejected.
             forbidden_fields = {"assigned_to"}
 
-            
+        elif user_role == "User":
+            forbidden_fields = {"priority", "status", "assigned_to"}
 
-        elif user_role == "User":    
-            
-            forbidden_fields = {
-                "priority", "status", "assigned_to"
-                }          
-
-            
-        else:             
+        else:
             raise HTTPException(
-            status_code=403,
-            detail="You are not authorized to update tickets."
+                status_code=403, detail="You are not authorized to update tickets."
             )
 
-        requested_forbidden_fields = (
-            forbidden_fields & update_data.keys()
-            )
+        requested_forbidden_fields = forbidden_fields & update_data.keys()
 
         if requested_forbidden_fields:
             raise HTTPException(
@@ -134,47 +123,47 @@ class TicketService:
                 detail=(
                     "You cannot update these fields: "
                     + ", ".join(sorted(requested_forbidden_fields))
-                )
+                ),
             )
 
-        return self.ticket_repository.update_ticket_by_id(id, modified_by = modified_by, 
-                                                          update_request = update_request)
-         
-    def delete_ticket_by_id(self, ticket_id: int, current_user:User):
+        return self.ticket_repository.update_ticket_by_id(
+            id, modified_by=modified_by, update_request=update_request
+        )
+
+    def delete_ticket_by_id(self, ticket_id: int, current_user: User):
         ticket = self.get_ticket_by_id(ticket_id, current_user=current_user)
 
         if not ticket:
-            raise  HTTPException(
-                    status_code=status.HTTP_404_NOT_FOUND,
-                    detail=f"Ticket {ticket_id} not found."
-                )
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Ticket {ticket_id} not found.",
+            )
 
         # agents cant delete
         if current_user.role.role_name not in ["Admin", "User"]:
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
-                detail="You are not authorized to delete this ticket."
+                detail="You are not authorized to delete this ticket.",
             )
-                                
-        is_deleted = self.ticket_repository.delete_ticket_by_id(
-                    ticket_id=ticket_id)
 
-    
+        is_deleted = self.ticket_repository.delete_ticket_by_id(ticket_id=ticket_id)
+
         if not is_deleted:
             raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Ticket {ticket_id} could not be deleted because it no longer exists."
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Ticket {ticket_id} could not be deleted because it no longer exists.",
             )
 
-       
         return f"Ticket {ticket_id} deleted successfully."
 
-
-
-    def get_tickets_query(self,page: int, page_size: int,
-                          current_user: User,
-                          status: Status | None, 
-                          priority:Priority|None) -> PaginatedTicketResponse:
+    def get_tickets_query(
+        self,
+        page: int,
+        page_size: int,
+        current_user: User,
+        status: Status | None,
+        priority: Priority | None,
+    ) -> PaginatedTicketResponse:
 
         user_id = current_user.id
 
@@ -190,28 +179,22 @@ class TicketService:
         else:
             raise HTTPException(status_code=403, detail="Invalid user role")
 
-        total, tickets = self.ticket_repository.get_tickets_query(scope=scope,page=page,page_size=page_size,
-                                                            user_id=user_id,
-                                                           status=status,priority=priority)
+        total, tickets = self.ticket_repository.get_tickets_query(
+            scope=scope,
+            page=page,
+            page_size=page_size,
+            user_id=user_id,
+            status=status,
+            priority=priority,
+        )
         total_pages = (total + page_size - 1) // page_size
 
-        ticket_items = [
-        TicketResponse.model_validate(ticket)
-        for ticket in tickets
-    ]
+        ticket_items = [TicketResponse.model_validate(ticket) for ticket in tickets]
 
         return PaginatedTicketResponse(
-        items=ticket_items,
-        page=page,
-        page_size=page_size,
-        total=total,
-        total_pages=total_pages
-    )
-
-        
-
-
-        
-
-       
-        
+            items=ticket_items,
+            page=page,
+            page_size=page_size,
+            total=total,
+            total_pages=total_pages,
+        )

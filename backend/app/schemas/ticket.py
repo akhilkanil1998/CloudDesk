@@ -1,7 +1,10 @@
-from pydantic import BaseModel, ConfigDict, AliasPath, Field
+from datetime import datetime
+
+from pydantic import AliasPath, BaseModel, ConfigDict, Field
+
 from app.enums.priority import Priority
 from app.enums.status import Status
-from datetime import datetime
+from app.schemas.attachment import AttachmentResponse
 
 
 class TicketResponse(BaseModel):
@@ -16,32 +19,33 @@ class TicketResponse(BaseModel):
         default=None,
         validation_alias=AliasPath("assigned_user", "employee_name"),
     )
-    created_by: int | None=None
-    created_by_name: str | None=Field(
+    created_by: int | None = None
+    created_by_name: str | None = Field(
         default=None,
         validation_alias=AliasPath("created_user", "employee_name"),
     )
-    modified_by: int | None=None
-    modified_by_name: str | None=Field(
+    modified_by: int | None = None
+    modified_by_name: str | None = Field(
         default=None,
         validation_alias=AliasPath("modified_user", "employee_name"),
     )
+    attachments: list[AttachmentResponse] = []
     model_config = ConfigDict(from_attributes=True)
-
 
 
 class CreateTicketRequest(BaseModel):
     title: str
     description: str
-    priority: Priority = Priority.Low #default to Low priority
-  
+    priority: Priority = Priority.Low  # default to Low priority
 
-class UpdateTicketRequest(BaseModel): 
-    title: str | None=None
-    description: str | None=None
-    priority: Priority | None=None
-    status: Status | None=None
-    assigned_to: int | None=None
+
+class UpdateTicketRequest(BaseModel):
+    title: str | None = None
+    description: str | None = None
+    priority: Priority | None = None
+    status: Status | None = None
+    assigned_to: int | None = None
+
 
 class PaginatedTicketResponse(BaseModel):
     items: list[TicketResponse]
